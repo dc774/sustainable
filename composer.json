@@ -1,0 +1,18 @@
+{
+    "name": "dc774/sustainable",
+    "description": "A child theme of the cwd_base_bootstrap theme for the Cornell Sustainable Campus website; from Cornell University CIT-CD.",
+    "type": "drupal-custom-theme",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "David Cutri (dc774)",
+            "homepage": "https://github.com/dc774",
+            "role": "Maintainer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "dc774/sustainable": "dev-master"
+    }
+}
