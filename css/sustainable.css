@@ -1,2 +1,42 @@
 
 /***** Front page *****/
+
+body, p {
+    font-family: "freight-text-pro-i4", "freight-text-pro", serif;;
+    font-size: 18px;
+    line-height: 1.42857;
+    color: #333333;
+    background-color: #fff;
+}
+#spotlights {
+	padding: 50px 0;
+	border-top: 1px solid #b2b2b2;
+}
+footer {
+    padding: 58px 0 24px 0;
+}
+footer,
+footer * {
+    background: #1c2c36;
+	color: #fff;
+}
+footer .region-footer {
+    padding: 40px 0;
+}
+footer .region-subfooter {
+    padding: 40px 0 6px;
+}
+
+/***** Responsive *****/
+
+@media (min-width: 768px) {
+	.path-node #main > .row > aside {
+		width: 22.677%;
+		clear: left;
+		padding-left: 5px;
+	}
+	.path-node #main > .row > section {
+		width: 77.323%;
+		float: right;
+	}
+}

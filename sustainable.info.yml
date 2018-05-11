@@ -1,0 +1,30 @@
+name: Cornell Sustainable Campus
+description: This is child of the CWD Cornell Base theme.
+type: theme
+base theme: cwd_base_bootstrap
+core: 8.x
+
+libraries:
+  - sustainable/global-styling
+
+ckeditor_stylesheets:
+  - css/sustainable.css
+  - ../cwd_base_bootstrap/sass/base.scss
+  - ../cwd_base_bootstrap/fonts/cornell-custom.css
+  - ../cwd_base_bootstrap/fonts/font-awesome.min.css
+  #- https://use.typekit.net/xbz3qob.css
+
+stylesheets-remove:
+  - ../cwd_base_bootstrap/bootstrap/stylesheets/bootstrap/_dropdowns.scss
+  
+regions:
+  navigation_collapsible: 'Navigation'
+  breadcrumbs: 'Breadcrumbs'
+  help: 'Help'
+  sidebar_first: 'Primary sidebar'
+  content: 'Content'
+  spotlights: 'Spotlights'
+  sidebar_second: 'Secondary sidebar'
+  footer: 'Footer'
+  subfooter: 'Subfooter'
+  hidden: 'Hidden region for referenced blocks'

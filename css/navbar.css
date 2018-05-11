@@ -1,0 +1,8 @@
+
+/***** Navigation bar *****/
+
+@media (min-width: 768px) {
+	#navbar .container-fluid > .navbar-collapse {
+		margin-right: 50px;
+	}
+}

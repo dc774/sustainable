@@ -1,0 +1,92 @@
+
+a {
+	color: #0071bb;
+}
+
+/***** Header *****/
+
+.cu-seal #cu-header {
+    background: none;
+}
+.cu-seal #cu-header .cu-brand {
+    padding-top: 30px;
+    padding-bottom: 60px;
+	padding-left: 50px;
+    font-family: "proxima-nova",sans-serif;
+    position: relative;
+}
+.cu-seal .cu-search {
+    border-bottom: 50px solid #b31b1b;
+}
+.cu-seal .cu-search > .container-fluid {
+	position: relative;
+}
+#cu-header .buttons {
+    top: unset;
+    bottom: -45px;
+}
+#navbar nav {
+	text-align: center;
+}
+.navbar-nav {
+    display: inline-block;
+    float: none;
+}
+#navbar .caret {
+	display: none;
+}
+.breadcrumb {
+    padding: 8px 60px 8px 50px;
+	border-radius: 0;
+    background-color: transparent;
+    border-bottom: 1px solid #ebebeb;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.breadcrumb > li {
+    margin-bottom: 0;
+}
+.breadcrumb > li.active,
+.breadcrumb > li {
+    color: #222;
+}
+.breadcrumb > li,
+.breadcrumb > li a {
+    font-size: 14px;
+	font-family: "proxima-nova",sans-serif;
+}
+.breadcrumb > li + li:before {
+    content: "/ ";
+    padding: 0 2px 0 6px;
+    color: #707070;
+}
+.path-frontpage #main {
+    padding-top: 1.5px;
+}
+@media (min-width: 1200px) {
+	#cu-header .cu-brand #site-name {
+		font-size: 60px;
+		font-family: "proxima-nova",sans-serif;
+		font-weight: 500;
+		padding: 40px 40px 8px 0;
+	}
+	.path-frontpage #cu-header .cu-brand #site-name {
+		padding: 50px 40px 17px 0;
+	}
+}
+@media (min-width: 992px) {
+	.cu-seal .cu-logo a {
+		width: 132px;
+		height: 132px;
+	}
+}
+@media (min-width: 768px) {
+	.cu-seal #cu-header .cu-brand .cu-unit {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		text-align: center;
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+}

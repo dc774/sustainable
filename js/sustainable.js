@@ -14,9 +14,21 @@ jQuery(document).ready(function($) {
 		
 	}
 	
+	var pathArray = window.location.pathname.split( '/' );	
+	var child_alias = pathArray[2];
+	//console.log('-'+one+'\n-'+two+'\n-'+three+'\n-'+four);
+	
+	// If we're on a landing page
+	if (child_alias === undefined) {
+		$('body').addClass('landing-page');
+	}
+	
 	// Fit videos
 	$('#main').fitVids({ customSelector: "iframe[src^='https://cdnapisec.kaltura.com']"});
 	
+	// Remove default nav toggle from main nav
+	$('#navbar li a').removeAttr('data-toggle');
+	$('#navbar li a').removeClass('dropdown-toggle');
 	
 	// Mobile navigation
 	if ( $(window).width() <= 752 ) {
