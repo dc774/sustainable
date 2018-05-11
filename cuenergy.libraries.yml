@@ -1,7 +1,0 @@
-global-styling:
-  css:
-    theme:
-      css/sustainable.css: {}
-  js:
-      js/sustainable.js: {}
-      js/jquery.fitvids.js: {}
