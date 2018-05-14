@@ -1,0 +1,32 @@
+
+/***** Typography *****/
+
+#main p {
+    font-family: "freight-text-pro-i4", "freight-text-pro", serif;;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+}
+
+h1, h2, h3, h4 {
+	font-family: "proxima-nova",sans-serif !important;
+	color: #000000;
+}
+.h1, 
+h1:not(.page-header) {
+	font-size: 60px;
+	line-height: 72px;
+	font-weight: 500;
+}
+h2:not(#block-mainnavigation-menu),
+.h2{
+	font-size: 36px;
+	line-height: 43px;
+	font-weight: normal;
+}
+h3,
+.h3{
+	font-size: 28px;
+	line-height: 33px;
+	font-weight: normal;
+}

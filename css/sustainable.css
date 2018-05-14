@@ -1,13 +1,6 @@
 
 /***** Front page *****/
 
-body, p {
-    font-family: "freight-text-pro-i4", "freight-text-pro", serif;;
-    font-size: 18px;
-    line-height: 1.42857;
-    color: #333333;
-    background-color: #fff;
-}
 #site-name a {
 	text-decoration: none;
 	color: #000;
@@ -34,7 +27,7 @@ footer .region-footer section form label {
     background: none;
     font-size: 14px;
     line-height: 17px;
-    font-family: Proxima Nova, sans-serif;
+    font-family: "proxima-nova",sans-serif;
 }
 footer .region-footer section form label {
     font-weight: normal;
@@ -45,13 +38,13 @@ footer .region-footer section form #edit-actions-submit {
     padding: 12px 55px;
     text-transform: uppercase;
     font-size: 16px;
-    font-family: Proxima Nova, sans-serif;
+    font-family: "proxima-nova",sans-serif;
     font-weight: 600;
     border: none;
 }
 footer .region-footer section form input[type="email"] {
     margin: 10px 0 28px;
-	font-family: Proxima Nova, sans-serif;
+	font-family: "proxima-nova",sans-serif;
     font-style: italic;
 }
 footer .region-subfooter {
@@ -59,6 +52,9 @@ footer .region-subfooter {
     padding: 30px 0 6px;
     border-top: 1px solid #33a093;
 	clear: both;
+}
+footer .region-footer section h2 {
+    color: #fff;
 }
 footer .region-footer section:not(#block-logo) h2 {
     text-transform: uppercase;
