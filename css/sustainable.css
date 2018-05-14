@@ -8,6 +8,10 @@ body, p {
     color: #333333;
     background-color: #fff;
 }
+#site-name a {
+	text-decoration: none;
+	color: #000;
+}
 #spotlights {
 	padding: 50px 0;
 	border-top: 1px solid #b2b2b2;
@@ -15,8 +19,7 @@ body, p {
 footer {
     padding: 58px 0 24px 0;
 }
-footer,
-footer * {
+footer {
     background: #1c2c36;
 	color: #fff;
 }
@@ -30,6 +33,13 @@ footer .region-subfooter {
 }
 footer .region-subfooter #copyright {
 	float: left;
+	letter-spacing: .02em;
+}
+footer .region-subfooter #block-copyright {
+	padding-left: 0;
+}
+footer .region-subfooter #block-socialicons {
+	padding-right: 0;
 }
 footer .region-subfooter #copyright a {
 	color: #fff;
@@ -39,6 +49,7 @@ footer .region-subfooter #social-icons {
 }
 footer .region-subfooter #social-icons .fa {
 	font-size: 20px;
+	color: #fff;
 }
 
 /***** Responsive *****/
@@ -52,5 +63,20 @@ footer .region-subfooter #social-icons .fa {
 	.path-node #main > .row > section {
 		width: 77.323%;
 		float: right;
+	}
+}
+@media (max-width: 768px) {
+	footer .region-subfooter {
+		padding: 24px 0 6px;
+	}
+	footer .region-subfooter #copyright {
+		float: none;
+		text-align: center;
+		padding: 6px 15px;
+	}
+	footer .region-subfooter #social-icons {
+		float: none;
+    	padding: 6px 15px;
+		text-align: center;
 	}
 }

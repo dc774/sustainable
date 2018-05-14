@@ -104,9 +104,9 @@
         <div class="cu-unit">
         {% if theme.settings.cwd_base_bootstrap_h2 is not empty %}
 			{% if is_front %}
-			  <h1 id="site-name">{{ theme.settings.cwd_base_bootstrap_h2 }}</h1>
+			  <h1 id="site-name"><a href="/">{{ theme.settings.cwd_base_bootstrap_h2 }}</a></h1>
 			{% else %}
-			  <div id="site-name">{{ theme.settings.cwd_base_bootstrap_h2 }}</div>
+			  <div id="site-name"><a href="/">{{ theme.settings.cwd_base_bootstrap_h2 }}</a></div>
 			{% endif %}
 		{% endif %}
         {% if theme.settings.cwd_base_bootstrap_h3 is not empty %}
