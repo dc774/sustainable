@@ -25,6 +25,10 @@ a {
     top: unset;
     bottom: -45px;
 }
+.cu-seal .cu-logo a {
+    z-index: 99;
+    position: relative;
+}
 #navbar nav {
 	text-align: center;
 }
