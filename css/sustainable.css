@@ -24,12 +24,46 @@ footer {
 	color: #fff;
 }
 footer .region-footer {
-    padding: 40px 0;
+    padding: 14px 0 65px;
+    overflow: hidden;
+}
+footer .region-footer section p,
+footer .region-footer section p a,
+footer .region-footer section form label {
+    color: #fff;
+    background: none;
+    font-size: 14px;
+    line-height: 17px;
+    font-family: Proxima Nova, sans-serif;
+}
+footer .region-footer section form label {
+    font-weight: normal;
+}
+footer .region-footer section form #edit-actions-submit {
+    color: #fff;
+    background: #ef4035;
+    padding: 12px 55px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: Proxima Nova, sans-serif;
+    font-weight: 600;
+    border: none;
+}
+footer .region-footer section form input[type="email"] {
+    margin: 10px 0 28px;
+	font-family: Proxima Nova, sans-serif;
+    font-style: italic;
 }
 footer .region-subfooter {
 	font-size: 14px;
     padding: 30px 0 6px;
     border-top: 1px solid #33a093;
+	clear: both;
+}
+footer .region-footer section:not(#block-logo) h2 {
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
 }
 footer .region-subfooter #copyright {
 	float: left;
