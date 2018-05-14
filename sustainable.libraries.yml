@@ -9,4 +9,3 @@ global-styling:
   js:
       js/sustainable.js: {}
       js/jquery.fitvids.js: {}
-	  
