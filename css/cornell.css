@@ -74,9 +74,6 @@ a {
 		padding: 40px 40px 8px 0;
 		line-height: 1.42857;
 	}
-	.path-frontpage #cu-header .cu-brand #site-name {
-		padding: 50px 40px 17px 0;
-	}
 }
 @media (min-width: 992px) {
 	.cu-seal .cu-logo a {

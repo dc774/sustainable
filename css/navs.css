@@ -12,8 +12,23 @@
 .path-frontpage #navbar .nav > li > a {
 	padding: 15px 0 9px 0;
 }
-#navbar .nav > li > a:hover, 
-#navbar .nav > li > a:focus {
+a:focus .fa,
+a:hover .fa,
+#main a:focus,
+#main a:hover,
+#footer a:focus,
+#footer a:hover,
+#skipnav a:focus,
+#skipnav a:hover,
+#spotlights a:focus,
+#spotlights a:hover,
+.region-breadcrumbs a:focus,
+.region-breadcrumbs a:hover {
+    background: #fffd96 !important;
+    color: #185b75 !important;
+}
+#navbar .nav > li > a:focus,
+#navbar .nav > li > a:hover {
     background: none;
 	color: #b31b1b;
 }
@@ -21,6 +36,7 @@
     background: none;
 	border-bottom: 5px solid #b31b1b;
 }
+
 #main #block-mainnavigation-menu {
     color: #222;
     font-size: 18px;
