@@ -16,9 +16,10 @@ ckeditor_stylesheets:
 
 stylesheets-remove:
   - ../cwd_base_bootstrap/bootstrap/stylesheets/bootstrap/_dropdowns.scss
-  
+
 regions:
-  navigation_collapsible: 'Navigation'
+  top_menu: 'Top menu'
+  navigation_collapsible: 'Main navigation'
   breadcrumbs: 'Breadcrumbs'
   help: 'Help'
   sidebar_first: 'Primary sidebar'

@@ -1,16 +1,18 @@
 /***** Navigation *****/
 
 #navbar .nav li {
-    padding: 0 30px;
+    width: 25%;
 }
 #navbar .nav > li > a {
-	padding: 15px 0 8px 0;
-    font-size: 23px;
-    color: #222;
-	border-bottom: 5px solid transparent;
+	padding: 8px 3px 7px;
+    margin-bottom: -7px;
+    display: inline-block;
+    font-size: 18px;
+    color: #767676;
+    border-bottom: 5px solid transparent;
 }
 .path-frontpage #navbar .nav > li > a {
-	padding: 15px 0 9px 0;
+
 }
 a:focus .fa,
 a:hover .fa,
@@ -30,11 +32,11 @@ a:hover .fa,
 #navbar .nav > li > a:focus,
 #navbar .nav > li > a:hover {
     background: none;
-	color: #b31b1b;
 }
-#navbar .nav > li.active > a {
-    background: none;
-	border-bottom: 5px solid #b31b1b;
+#navbar .nav > li.active > a,
+#navbar .nav > li > a:focus,
+#navbar .nav > li > a:hover {
+    border-bottom: 5px solid #333;
 }
 
 #main #block-mainnavigation-menu {
@@ -50,7 +52,7 @@ a:hover .fa,
 	line-height: 1.2;
 }
 #main aside ul li a {
-    color: #222;
+    color: #0c6888;
     font-size: 15px;
     padding-left: 24px;
     margin-bottom: 0;

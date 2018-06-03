@@ -8,10 +8,10 @@ a {
     background: none;
 }
 .cu-seal #cu-header .cu-brand {
-    padding-top: 30px;
-    padding-bottom: 60px;
+    padding-top: 18px;
+    padding-bottom: 18px;
 	padding-left: 50px;
-    font-family: "proxima-nova",sans-serif;
+    font-family: canada-type-gibson,sans-serif;
     position: relative;
 }
 .cu-seal .cu-search {
@@ -24,6 +24,10 @@ a {
     top: unset;
     bottom: -45px;
 }
+#cu-header #navbar {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
 .cu-seal .cu-logo a {
     z-index: 99;
     position: relative;
@@ -33,16 +37,16 @@ a {
 }
 .navbar-nav {
     display: inline-block;
+	width: 100%;
     float: none;
 }
 #navbar .caret {
 	display: none;
 }
 .breadcrumb {
-    padding: 8px 60px 8px 50px;
+    padding: 30px 60px 10px 50px;
 	border-radius: 0;
     background-color: transparent;
-    border-bottom: 1px solid #ebebeb;
 	max-width: 1400px;
 	margin: 0 auto;
 }
@@ -56,29 +60,45 @@ a {
 .breadcrumb > li,
 .breadcrumb > li a {
     font-size: 14px;
-	font-family: "proxima-nova",sans-serif;
+	font-family: canada-type-gibson,sans-serif;
 }
 .breadcrumb > li + li:before {
     content: "/ ";
     padding: 0 2px 0 6px;
     color: #707070;
 }
+#main {
+    padding-top: 0;
+}
 .path-frontpage #main {
     padding-top: 1.5px;
 }
+#cu-header .cu-brand #site-name {
+	font-size: 48px;
+	font-family: canada-type-gibson,sans-serif;
+	font-weight: 500;
+	padding: 36px 40px 5px 0;
+	line-height: 1.42857;
+}
+#cu-search-button {
+    background-color: #a01114;
+    border-radius: 8px;
+}
+#cu-search-button.open {
+    background-color: #b31b1b;
+}
+
 @media (min-width: 1200px) {
 	#cu-header .cu-brand #site-name {
-		font-size: 60px;
-		font-family: "proxima-nova",sans-serif;
-		font-weight: 500;
-		padding: 40px 40px 8px 0;
+		font-size: 47px;
+		font-family: canada-type-gibson,sans-serif;
 		line-height: 1.42857;
 	}
 }
 @media (min-width: 992px) {
 	.cu-seal .cu-logo a {
-		width: 132px;
-		height: 132px;
+		width: 100px;
+		height: 100px;
 	}
 }
 @media (min-width: 768px) {
