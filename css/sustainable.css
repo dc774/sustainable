@@ -91,10 +91,14 @@ footer .region-subfooter #social-icons .fa {
 
 /***** Sidebar *****/
 #block-mainnavigation {
-    padding-top: 42px;
-    padding-left: 5px;
+    padding-top: 50px;
+    padding-bottom: 38px;
     background: #d1d1d1 url(../images/sidebar-top.png) left top no-repeat;
     background-size: 100%;
+}
+#block-mainnavigation ul {
+    list-style: none;
+	padding-left: 0;
 }
 .landing-page #main #block-mainnavigation-menu {
     margin-left: -5px;
@@ -130,6 +134,10 @@ footer .region-subfooter #social-icons .fa {
 #top-menu .nav li:last-child a:hover {
     text-decoration: underline;
     background-color: #a01114;
+}
+
+.not-front #main > .row > section {
+	padding-top: 20px;
 }
 
 /***** Responsive *****/

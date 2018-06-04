@@ -54,13 +54,38 @@ a:hover .fa,
 #main aside ul li a {
     color: #0c6888;
     font-size: 15px;
-    padding-left: 24px;
+    padding: 6px;
+    margin-left: 16px;
+    margin-right: 16px;
     margin-bottom: 0;
 }
-#main aside ul li a:hover,
+#main aside ul li {
+    margin-bottom: .8em;
+}
+#main aside ul li a:hover {
+	background: none !important;
+	text-decoration: underline;
+}
 #main aside ul li a:focus {
-    color: #b31b1b;
-	background: none;
+	text-decoration: none;
+}
+#main aside ul li ul {
+    margin: 18px 12px 18px 35px;
+    border-left: 1px solid #f5f5f5;
+}
+#main aside ul li ul li a {
+    color: #878787;
+    margin-left: 5px;
+	font-size: 14px;
+}
+#main aside ul li ul li a.is-active {
+    background: url(../images/sidebar-bullet.png) 1px 50% no-repeat;
+    background-size: 11px;
+    padding-left: 18px;
+    margin-left: -7px;
+}
+#main aside ul li ul li a:hover {
+    color: #878787 !important;
 }
 #main aside ul li.active a {
     border-left: 5px solid #b31b1b;
