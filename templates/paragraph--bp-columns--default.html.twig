@@ -136,7 +136,8 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {% if paragraph.field_happenings_section is defined and paragraph.field_happenings_section is not empty %}
   {% if paragraph.field_happenings_section.value == 1 %}
-    <h2 class="happenings happenings-title title">What's Happening Around Campus</h2>
+    <h2 class="happenings happenings-title title sans">What's Happening Around Campus</h2>
+    <div class="happenings happenings-more-link more-link"><a href="/happenings" class="designer">View all</a></div>
   {% endif %}
 {% endif %}
 
