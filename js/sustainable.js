@@ -52,8 +52,14 @@ jQuery(document).ready(function($) {
 		
 	$(window).resize(resizeChecks);
 	resizeChecks();
-		
 	
+	$('#cu-header .cu-brand').attr('data-spy','affix');
+		
+	$('#cu-header .cu-brand').affix({
+		offset: {     
+		  top: $('#cu-header .cu-brand').offset().top
+		}
+	});
 	
 	// Window Load ------------------------------------------------------------
 	$(window).on("load", function() {

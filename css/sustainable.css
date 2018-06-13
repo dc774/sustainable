@@ -140,6 +140,22 @@ footer .region-subfooter #social-icons .fa {
 	padding-top: 20px;
 }
 
+
+
+.affix-top {
+  position: relative;
+}
+
+.affix {
+  top: 0;
+  position: fixed;
+}
+
+
+
+
+
+
 /***** Responsive *****/
 
 @media (min-width: 768px) {
