@@ -142,6 +142,16 @@
   </div>
 {% endblock %}
 
+{% if page.spotlights %}
+  {% block spotlights %}
+    <div id="spotlights">
+      <div class="spotlights {{ container }}">
+        {{ page.spotlights }}
+      </div>
+    </div>
+  {% endblock %}
+{% endif %}
+
 {% if page.footer %}
   {% block footer %}
     <footer id="footer" role="contentinfo">

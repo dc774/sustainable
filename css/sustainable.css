@@ -1,5 +1,131 @@
 /***** Front page *****/
+.path-frontpage .paragraph--type--bp-columns-two-uneven__2col-column1 {
+	max-width: 850px;
+}
+.path-frontpage .paragraph--type--bp-columns-two-uneven__2col-column2 {
 
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .card.views-row:first-child {
+	clear: both;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .card.views-row > div {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+.path-frontpage #main .view-header-title {
+    float: left;
+    color: #000;
+    margin: 0 0 16px 15px;
+    font-size: 34px;
+}
+.path-frontpage #main .block-views-blockevents-block-1 {
+	background: #ebebeb;
+    padding: 22px;
+}
+.path-frontpage #main .block-views-blockevents-block-1 > .form-group {
+	background: #fff;
+	padding: 16px 10px 16px 6px;
+}
+.path-frontpage #main .block-views-blockevents-block-1 .view-header-title {
+    float: none;
+}
+.path-frontpage #main .block-views-blockspotlight-block-1 .view-header-title {
+    margin: 0 12px 16px 5px;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .view-header-title {
+    width: 22%;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .view-header-content {
+    font-size: 12px;
+    line-height: 20px;
+    float: right;
+    background: #fff;
+    padding: 15px 5px 15px 15px;
+    margin-right: 1.5%;
+    margin-top: -12px;
+    margin-bottom: 26px;
+    width: 73.5%;
+}
+.path-frontpage #main .block-views-blockheader-image-block-1 .view-footer {
+	position: absolute;
+    padding: 0 20px 12px 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+}
+.path-frontpage #main .block-views-blockheader-image-block-1 .view-footer h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 31px;
+    width: 78%;
+}
+.path-frontpage #main .block-views-blockheader-image-block-1 .view-footer .body {
+    color: #eeeeee;
+    font-size: 13px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.path-frontpage #main .block-views-blockheader-image-block-1 .view-footer .footnote {
+    color: #eee;
+    font-size: 13px;
+}
+.path-frontpage .views-element-container.block-views-blockspotlight-block-2 {
+	background: #ebebeb;
+    padding: 22px;
+}
+.path-frontpage .views-element-container.block-views-blockevents-block-1 {
+	background: #ebebeb;
+    padding: 22px;
+}
+.path-frontpage .views-element-container.block-views-blockevents-block-1 .views-row {
+    margin-bottom: 31px;
+}
+.path-frontpage .views-element-container.block-views-blockevents-block-1 .more-link {
+    margin: 30px 0 12px 20px;
+}
+.path-frontpage .views-element-container.block-views-blockevents-block-1 .more-link a {
+    text-decoration: none;
+    font-size: 12px;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-field-image img {
+	border: 8px solid #fff;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-title {
+    padding: 14px 12px;
+    margin-bottom: 0;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-title a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary {
+    padding: 0 12px 20px 12px;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary p {
+    font-size: 15px;
+    line-height: 20px;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .read-more {
+    padding: 4px 12px 10px 12px;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .more-link {
+    text-decoration: none;
+    font-size: 12px;
+    color: #b31b1b;
+}
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1400px;
+}
+.paragraph.paragraph--type--bp-columns-two-uneven.paragraph--style--66-33 .paragraph--type--bp-columns-two-uneven__2col-column1 {
+    float: left;
+    width: 66.66666667%;
+	padding-left: 0;
+}
 #site-name a {
 	text-decoration: none;
 	text-transform: uppercase;
@@ -15,6 +141,93 @@
 #spotlights {
 	padding: 50px 0;
 	border-top: 1px solid #b2b2b2;
+}
+.news-spotlights .views-row .field-name-field-image {
+	float: left;
+	margin: 10px 0 14px 7px;
+	padding: 0;
+}
+.news-spotlights .views-row {
+	clear: both;
+    overflow: hidden;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+.path-frontpage .views-element-container.block-views-blockevents-block-1 .views-row:first-child {
+	margin-top: 25px;
+}
+.news-spotlights div.more-link {
+    padding-left: 9px;
+    margin-bottom: 5px;
+}
+.news-spotlights div.more-link a {
+    display: inline-block;
+	font-size: 12px;
+	text-decoration: none;
+}
+.news-spotlights .views-row .col-2 {
+	padding-left: 180px;
+	word-wrap: break-word;
+}
+.news-spotlights .views-row:nth-child(3) {
+    border-bottom: none;
+	margin-bottom: 10px;
+    padding-bottom: 0;
+}
+.block-views-blockspotlight-block-1 {
+	width: 104%;
+}
+.news-spotlights .views-row .title {
+    text-decoration: none;
+    display: block;
+    padding-top: 5px;
+	padding-bottom: 25px;
+    color: #000;
+    font-size: 24px;
+    line-height: 1.3em;
+}
+.news-spotlights .views-row .more-link {
+    display: inline-block;
+	font-size: 12px;
+}
+
+/***** Events *****/
+.event-month-and-day {
+    text-align: center;
+    line-height: 17px;
+    border-left: 4px solid #b31b1b;
+    padding: 0 0 5px 8px;
+    margin-left: 18px;
+    margin-top: 6px;
+}
+.event-month-and-day .event-month {
+    float: left;
+    text-transform: uppercase;
+    color: #999;
+    display: block;
+    font-size: 12px;
+    padding-left: 4px;
+}
+.event-month-and-day .event-day {
+    clear: both;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    letter-spacing: -3px;
+    text-align: left;
+}
+.event-month-and-day .event-day sup {
+    top: -6px;
+    font-size: 10px;
+    margin-left: 3px;
+    letter-spacing: .005em;
+}
+.event-title-and-location a {
+    text-decoration: none;
+    color: #b31b1b;
+    font-size: 16px;
 }
 footer {
     padding: 58px 0 24px 0;
@@ -153,11 +366,11 @@ footer .region-subfooter #social-icons .fa {
 
 
 
-
-
-
 /***** Responsive *****/
 
+	.path-frontpage .paragraph--id--52 img {
+		max-width: 94.5%;
+	}
 @media (min-width: 768px) {
 	.path-node #main > .row > aside {
 		width: 22.677%;

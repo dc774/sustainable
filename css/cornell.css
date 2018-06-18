@@ -1,5 +1,5 @@
 a {
-	color: #0071bb;
+	color: #0075bd;
 }
 
 /***** Header *****/
@@ -103,11 +103,8 @@ a {
 }
 @media (min-width: 768px) {
 	.cu-seal #cu-header .cu-brand .cu-unit {
-		position: absolute;
-		top: 0;
-		width: 100%;
 		text-align: center;
-		max-width: 1280px;
-		margin: 0 auto;
+		margin: -28px 0 0 0;
+		width: 73%;
 	}
 }
