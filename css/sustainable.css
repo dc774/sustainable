@@ -1,9 +1,19 @@
 /***** Front page *****/
 .path-frontpage .paragraph--type--bp-columns-two-uneven__2col-column1 {
-	max-width: 850px;
+
 }
 .path-frontpage .paragraph--type--bp-columns-two-uneven__2col-column2 {
 
+}
+.path-frontpage .paragraph--id--52 .paragraph__column {
+	padding: 0 0 21px 0;
+}
+.path-frontpage .paragraph--id--5 .paragraph__column {
+	padding-bottom: 0;
+}
+.path-frontpage .paragraph--id--5 .paragraph__column .paragraph--type--bp-columns-two-uneven__2col-column1 {
+	padding-bottom: 0;
+	max-width: none;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .card.views-row:first-child {
 	clear: both;
@@ -25,6 +35,7 @@
 .path-frontpage #main .block-views-blockevents-block-1 > .form-group {
 	background: #fff;
 	padding: 16px 10px 16px 6px;
+	margin-bottom: 0;
 }
 .path-frontpage #main .block-views-blockevents-block-1 .view-header-title {
     float: none;
@@ -72,13 +83,14 @@
 .path-frontpage .views-element-container.block-views-blockspotlight-block-2 {
 	background: #ebebeb;
     padding: 22px;
+	padding-bottom: 33px;
 }
 .path-frontpage .views-element-container.block-views-blockevents-block-1 {
 	background: #ebebeb;
     padding: 22px;
 }
 .path-frontpage .views-element-container.block-views-blockevents-block-1 .views-row {
-    margin-bottom: 31px;
+    margin-bottom: 20px;
 }
 .path-frontpage .views-element-container.block-views-blockevents-block-1 .more-link {
     margin: 30px 0 12px 20px;
@@ -88,22 +100,92 @@
     font-size: 12px;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-field-image img {
-	border: 8px solid #fff;
+	border: 10px solid #fff;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image a,
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-field-image a {
+	display: inline-block;
+    position: relative;
+    z-index: 1;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image .field-name-title {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+	top: unset;
+    margin: 0 0 10px 6px;
+    width: 96%;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image:hover .field-name-title {
+	-webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 2s ease-in-out;
+	bottom: unset;
+	top: 35%;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image:hover .field-name-title a {
+	color: #fff !important;
+	background: none !important;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image::after {
+	display: block;
+    position: relative;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.16+0,0.65+100 */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.16) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.16) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+	margin-top: -195.33px;
+    margin-left: 6px;
+    margin-bottom: 0;
+    z-index: 9;
+    pointer-events: none;
+    height: 185.33px;
+    width: 96%;
+    content: '';
+}
+.path-frontpage #main .paragraph--id--35 .views-row:nth-child(2) .field-name-field-image::after {
+	margin-top: -208.33px;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-title {
-    padding: 14px 12px;
+    padding: 14px 8px;
     margin-bottom: 0;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-title a {
     text-decoration: none;
+	padding: 4px 6px;
     color: #000;
     font-size: 18px;
     display: block;
     margin: 0 auto;
 }
+.path-frontpage #main .paragraph--id--36 .field-name-title a {
+    text-decoration: none;
+    display: inline-block;
+    width: 90%;
+    color: #000;
+    font-size: 23px;
+    padding: 4px 6px;
+    margin: 0 6px;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image {
+    position: relative;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image .field-name-title a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px;
+    margin: 0;
+}
+.path-frontpage #main .paragraph--id--36 .field-name-summary,
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary {
     padding: 0 12px 20px 12px;
 }
+.path-frontpage #main .paragraph--id--36 .field-name-summary p,
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary p {
     font-size: 15px;
     line-height: 20px;
@@ -119,12 +201,24 @@
 .container-fluid {
     padding-left: 15px;
     padding-right: 15px;
-    max-width: 1400px;
+    max-width: 1370px;
 }
 .paragraph.paragraph--type--bp-columns-two-uneven.paragraph--style--66-33 .paragraph--type--bp-columns-two-uneven__2col-column1 {
     float: left;
     width: 66.66666667%;
-	padding-left: 0;
+}
+
+.fa-clock-o:before {
+    font-size: 15px;
+    padding: 0 5px 0 1px;
+    font-weight: bold;
+    color: #999;
+}
+.fa-map-marker:before {
+    font-size: 17px;
+    padding: 0 7px 0 3px;
+    font-weight: bold;
+    color: #b31b1b;
 }
 #site-name a {
 	text-decoration: none;
@@ -147,11 +241,14 @@
 	margin: 10px 0 14px 7px;
 	padding: 0;
 }
+.news-spotlights .views-row .field-name-field-image a {
+	display: inline-block;
+}
 .news-spotlights .views-row {
 	clear: both;
     overflow: hidden;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
     border-bottom: 1px solid #ddd;
 }
 .path-frontpage .views-element-container.block-views-blockevents-block-1 .views-row:first-child {
@@ -184,7 +281,7 @@
     padding-top: 5px;
 	padding-bottom: 25px;
     color: #000;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 1.3em;
 }
 .news-spotlights .views-row .more-link {
@@ -197,9 +294,9 @@
     text-align: center;
     line-height: 17px;
     border-left: 4px solid #b31b1b;
-    padding: 0 0 5px 8px;
+    padding: 3px 0 8px 8px;
     margin-left: 18px;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 .event-month-and-day .event-month {
     float: left;
@@ -228,7 +325,35 @@
     text-decoration: none;
     color: #b31b1b;
     font-size: 16px;
+	margin-bottom: 7px;
+    display: block;
 }
+
+
+/***** Happenings *****/
+.path-frontpage #main .happenings.view-header-title {
+    text-align: center;
+    float: none;
+    margin: 0 0 24px 0;
+}
+.path-frontpage #main .happenings-more-link {
+    float: right;
+    margin-right: 30px;
+    margin-top: -50px;
+}
+.path-frontpage #main .happenings-featured-button {
+    text-align: center;
+}
+.path-frontpage #main .happenings-featured-button span {
+    background: #3bc8b3;
+    text-transform: uppercase;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 0 58px;
+    padding: 10px;
+}
+
 footer {
     padding: 58px 0 24px 0;
 }
@@ -367,10 +492,6 @@ footer .region-subfooter #social-icons .fa {
 
 
 /***** Responsive *****/
-
-	.path-frontpage .paragraph--id--52 img {
-		max-width: 94.5%;
-	}
 @media (min-width: 768px) {
 	.path-node #main > .row > aside {
 		width: 22.677%;
