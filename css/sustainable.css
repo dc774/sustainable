@@ -1,9 +1,62 @@
-/***** Front page *****/
-.path-frontpage .paragraph--type--bp-columns-two-uneven__2col-column1 {
 
+.flip-horizontal {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph;
+    filter: fliph;
 }
-.path-frontpage .paragraph--type--bp-columns-two-uneven__2col-column2 {
+.fa-bicycle {
+    padding: 4px;
+    color: #3bc8b3;
+    background: #fff;
+    font-size: 30px;
+}
+.bicycle-wrap {
+    text-align: center;
+    margin-top: -40px;
+	margin-bottom: 5px;
+}
+hr.bicycle {
+    width: 42%;
+    padding-top: 14px;
+}
+.path-frontpage #main .video-blurb {
+    font-size: 15px;
+    padding: 0 102px;
+    text-align: center;
+    font-style: italic;
+}
+footer .region-footer section span.contact-info a {
+	margin-left: -6px;
+}
 
+/***** Front page *****/
+.path-frontpage #main .region-content article .content > div:nth-child(4) .paragraph--id--33 > .paragraph__column {
+    margin-top: 40px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(4) .paragraph--id--33 > .paragraph__column > div:first-child {
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    width: 500px;
+    margin: 0 0 0 -250px;
+}
+.path-frontpage .paragraph--id--33 .paragraph__column > div:nth-child(2) {
+    width: 50%;
+}
+.path-frontpage .paragraph--id--33 .paragraph__column > div:nth-child(3) {
+    width: 50%;
+}
+.path-frontpage .paragraph--id--33 .paragraph__column > div:nth-child(3) h3 {
+    font-size: 20px;
+	margin-bottom: 4px;
+}
+.path-frontpage .paragraph--id--33 .paragraph__column > div:nth-child(3) ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: -5px;
 }
 .path-frontpage .paragraph--id--52 .paragraph__column {
 	padding: 0 0 21px 0;
@@ -21,6 +74,9 @@
 .path-frontpage #main .block-views-blockspotlight-block-2 .card.views-row > div {
 	padding-left: 8px;
 	padding-right: 8px;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .card.views-row .field-name-field-image a {
+	display: block;
 }
 .path-frontpage #main .view-header-title {
     float: left;
@@ -47,11 +103,11 @@
     width: 22%;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .view-header-content {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 20px;
     float: right;
     background: #fff;
-    padding: 15px 5px 15px 15px;
+    padding: 15px 15px 15px 15px;
     margin-right: 1.5%;
     margin-top: -12px;
     margin-bottom: 26px;
@@ -83,7 +139,7 @@
 .path-frontpage .views-element-container.block-views-blockspotlight-block-2 {
 	background: #ebebeb;
     padding: 22px;
-	padding-bottom: 33px;
+	padding-bottom: 39px;
 }
 .path-frontpage .views-element-container.block-views-blockevents-block-1 {
 	background: #ebebeb;
@@ -102,54 +158,92 @@
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-field-image img {
 	border: 10px solid #fff;
 }
-.path-frontpage #main .paragraph--id--35 .field-name-field-image a,
-.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-field-image a {
-	display: inline-block;
-    position: relative;
-    z-index: 1;
+.path-frontpage #main .paragraph--id--35 .views-row {
+	width: 50%;
+    max-width: 300px;
+    max-height: 198px;
+    margin-bottom: 20px;
+    float: left;
 }
-.path-frontpage #main .paragraph--id--35 .field-name-field-image .field-name-title {
-    position: absolute;
-    z-index: 99;
-    bottom: 0;
-	top: unset;
-    margin: 0 0 10px 6px;
-    width: 96%;
+.path-frontpage #main .paragraph--id--35 .views-row .happening-teaser {
+    position: relative;
+    max-height: 198px;
+}
+.path-frontpage #main .paragraph--id--35 .views-row:nth-child(odd) {
+	margin-right: 20px;
+}
+.path-frontpage #main .paragraph--id--35 .views-row:first-child {
+	background: #27A0DE url(../images/twitter.png) 96% 96% no-repeat;
+    background-size: 26px;
+    padding-top: 46px;
+    padding-bottom: 42px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.path-frontpage #main .paragraph--id--35 .views-row:first-child p {
+    color: #fff;
+    font-size: 16px;
+}
+.path-frontpage #main .paragraph--id--35 .views-row:first-child p a {
+    color: #fff;
+    font-size: 16px;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image a {
+	display: block;
+    padding: 0;
+}
+.path-frontpage #main .video-thumb {
+    max-width: 365px;
+    margin: 0 auto;
 }
 .path-frontpage #main .paragraph--id--35 .field-name-field-image:hover .field-name-title {
-	-webkit-transition: all 2s ease-in-out;
-    -moz-transition: all 2s ease-in-out;
-    -o-transition: all 2s ease-in-out;
-    transition: all 2s ease-in-out;
-	bottom: unset;
-	top: 35%;
+
 }
 .path-frontpage #main .paragraph--id--35 .field-name-field-image:hover .field-name-title a {
-	color: #fff !important;
-	background: none !important;
+
 }
 .path-frontpage #main .paragraph--id--35 .field-name-field-image::after {
-	display: block;
-    position: relative;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.16+0,0.65+100 */
-	background: -moz-linear-gradient(top, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0.16) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0,0,0,0.16) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
-	margin-top: -195.33px;
-    margin-left: 6px;
-    margin-bottom: 0;
-    z-index: 9;
-    pointer-events: none;
-    height: 185.33px;
-    width: 96%;
-    content: '';
+
 }
 .path-frontpage #main .paragraph--id--35 .views-row:nth-child(2) .field-name-field-image::after {
-	margin-top: -208.33px;
+
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image img {
+	max-height: 198px;
+}
+.path-frontpage #main .paragraph--id--35 .views-row .happening-teaser .field-name-title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+	z-index: 9;
+}
+.path-frontpage #main .paragraph--id--35 .right-caret {
+    display: none;
+    margin: 0 auto 12px;
+    background: url(../images/nav_arrow_white.png) center center no-repeat;
+    background-size: 28%;
+    height: 22px;
+    width: 22px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-title a {
+	-webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+    text-decoration: none;
+	text-align: center;
+    display: block;
+    color: #fff;
+	margin-top: 0;
+    font-size: 18px;
+    padding: 165px 14px 10px;
+    line-height: 23px;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-title {
-    padding: 14px 8px;
+    padding: 14px 12px;
     margin-bottom: 0;
 }
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-title a {
@@ -160,7 +254,7 @@
     display: block;
     margin: 0 auto;
 }
-.path-frontpage #main .paragraph--id--36 .field-name-title a {
+.path-frontpage #main .paragraph--id--34 .field-name-title a {
     text-decoration: none;
     display: inline-block;
     width: 90%;
@@ -169,23 +263,75 @@
     padding: 4px 6px;
     margin: 0 6px;
 }
-.path-frontpage #main .paragraph--id--35 .field-name-field-image {
-    position: relative;
-}
-.path-frontpage #main .paragraph--id--35 .field-name-field-image .field-name-title a {
-    text-decoration: none;
-    display: inline-block;
-    width: 100%;
-    color: #fff;
-    font-size: 18px;
-    padding: 8px;
-    margin: 0;
-}
-.path-frontpage #main .paragraph--id--36 .field-name-summary,
-.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary {
+.path-frontpage #main .paragraph--id--34 .field-name-summary {
     padding: 0 12px 20px 12px;
 }
-.path-frontpage #main .paragraph--id--36 .field-name-summary p,
+.path-frontpage #main .paragraph--id--35 .text-overlay {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.16+0,0.65+100 */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.16) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.16) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+    position: absolute;
+    width: 300px;
+    max-width: 100%;
+    max-height: 198px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.path-frontpage #main .paragraph--id--35 .views-row .happening-teaser .field-name-title a:focus,
+.path-frontpage #main .paragraph--id--35 .views-row .happening-teaser .field-name-title a:hover {
+	background: none !important;
+	color: #fff !important;
+	padding: 91px 14px 85px;
+	outline: 0;
+}
+.path-frontpage #main .paragraph--id--35 .views-row .happening-teaser .field-name-title a:focus .right-caret,
+.path-frontpage #main .paragraph--id--35 .views-row .happening-teaser .field-name-title a:hover .right-caret {
+	display: block;
+}
+.path-frontpage #main .paragraph--id--35 .field-name-field-image {
+	margin: 0;
+    max-height: 198px;
+}
+.path-frontpage #main .paragraph--id--57 .paragraph__column {
+	padding-top: 2px;
+    padding-bottom: 8px;
+}
+.path-frontpage #main .paragraph--id--58 .paragraph__column > div:nth-child(2) {
+	position: absolute;
+    width: 32%;
+    top: 0;
+    left: 0;
+    padding-left: 17px;
+    padding-right: 15px;
+    margin: 84px 20px 0 62px;
+    border-left: 1px solid #fff;
+}
+.path-frontpage #main .paragraph--id--58 .paragraph__column > div:nth-child(2) h2 {
+	color: #fff;
+	margin-left: 0;
+    float: none;
+}
+.path-frontpage #main .paragraph--id--58 .paragraph__column > div:nth-child(2) p {
+	font-size: 16px;
+	color: #fff;
+	padding: 0 4px;
+}
+.path-frontpage #main .paragraph--id--58 .paragraph__column > div:nth-child(2) .timeline-link {
+	padding: 0;
+}
+.path-frontpage #main .paragraph--id--58 .paragraph__column > div:nth-child(2) .timeline-link a {
+	text-decoration: none;
+}
+.path-frontpage #main .paragraph--id--58 .paragraph__column > div:nth-child(2) a {
+	color: #fff;
+}
+.path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary {
+    padding: 0 16px 20px 17px;
+}
+.path-frontpage #main .paragraph--id--36 .field-name-summary p, 
 .path-frontpage #main .block-views-blockspotlight-block-2 .field-name-summary p {
     font-size: 15px;
     line-height: 20px;
@@ -278,8 +424,10 @@
 .news-spotlights .views-row .title {
     text-decoration: none;
     display: block;
-    padding-top: 5px;
-	padding-bottom: 25px;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    margin-top: 8px;
+    margin-bottom: 17px;
     color: #000;
     font-size: 21px;
     line-height: 1.3em;
@@ -294,6 +442,7 @@
     text-align: center;
     line-height: 17px;
     border-left: 4px solid #b31b1b;
+	border-right: 1px solid #eee;
     padding: 3px 0 8px 8px;
     margin-left: 18px;
     margin-top: 4px;
@@ -325,10 +474,14 @@
     text-decoration: none;
     color: #b31b1b;
     font-size: 16px;
-	margin-bottom: 7px;
-    display: block;
+    margin-bottom: 7px;
+    display: inline-block;
+    text-align: left;
 }
-
+.event-title-and-location .event-location,
+.event-title-and-location .event-times {
+    padding: 0 7px;
+}
 
 /***** Happenings *****/
 .path-frontpage #main .happenings.view-header-title {
@@ -352,6 +505,74 @@
     display: inline-block;
     margin: 0 0 58px;
     padding: 10px;
+}
+
+.path-frontpage #main .region-content article .content > div:nth-child(5) {
+	padding: 35px 15px 65px 15px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div {
+	padding: 40px 40px 77px;
+    border: 1px solid #767676;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column {
+    text-align: center;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div {
+	width: 25%;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div img {
+    max-height: 115px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div:last-child {
+    position: absolute;
+    bottom: -98px;
+    width: 100%;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div:first-child {
+    position: absolute;
+    padding: 0 88px;
+    background: #fff;
+    width: 550px;
+    top: -64px;
+    left: 50%;
+    margin-left: -275px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div:first-child h2 {
+    margin-left: 0;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div .rank {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 10px auto 12px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div .ranker {
+    text-transform: uppercase;
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column > div .award-rank {
+    border-bottom: 4px solid #ccc;
+    width: 45%;
+    margin: 10px auto 10px auto;
+}
+.path-frontpage #main .rankings-graphic-wrapper {
+    background: #fff;
+    width: 220px;
+    margin: 0 auto;
+}
+.path-frontpage #main .rankings-graphic {
+    color: #fff;
+    padding: 10px 30px;
+    background: #b31b1b;
+    width: 154px;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+.path-frontpage #main .region-content article .content > div:nth-child(5) > div > .paragraph__column .awards-blurb {
+    font-size: 17px;
 }
 
 footer {
