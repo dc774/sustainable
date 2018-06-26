@@ -73,7 +73,8 @@
   </head>
   <body{{ attributes.addClass(body_classes) }}>
 	<div id="skipnav"><a href="#main">{{ 'Skip to main content'|t }}</a></div>
-    {{ page_top }}
+	<div id="mobile-nav-dimmer" class="closed"></div>
+	{{ page_top }}
     <header id="cu-header">
       <div id="cu-search" class="cu-search">
         <div class="{{ container }}">
@@ -103,8 +104,8 @@
         </div>
       </div>
       <div class="cu45-helper"></div>
-      <div class="{{ container }} cu-brand">
-        <div class="cu-logo"><a class="logo-link" href="http://www.cornell.edu"><img class="sr-only" src="/{{ directory }}/images/cornell/bold_cornell_logo_simple_b31b1b.svg" alt="Cornell University" width="245" height="62"></a></div>
+      <div id="cu-brand" class="{{ container }} cu-brand">
+        <div id="cu-logo" class="cu-logo"><a class="logo-link" href="http://www.cornell.edu"><img class="sr-only" src="/{{ directory }}/images/cornell/bold_cornell_logo_simple_b31b1b.svg" alt="Cornell University" width="245" height="62"></a></div>
         <div class="cu-unit">
         {% if theme.settings.cwd_base_bootstrap_h2 is not empty %}
 			{% if is_front %}

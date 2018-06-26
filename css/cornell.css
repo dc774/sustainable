@@ -2,11 +2,34 @@ a {
 	color: #0075bd;
 	padding: 4px 6px;
 }
+a img:hover {
+	opacity: .85;
+}
+#main .region-content a:hover,
+.paragraph--id--32 a:hover,
+#footer a:hover {
+	text-decoration: none;
+}
+/*.happening-teaser:hover .field-name-field-image a img {
+	opacity: .95;
+}*/
+#toolbar-administration {
+    z-index: 9999;
+    position: relative;
+}
+.hide-link-text {
+	text-indent: -1000em;
+}
 
 /***** Header *****/
 
 .cu-seal #cu-header {
-    background: none;
+    width: 100%;
+    background: #fff;
+}
+.cu-seal.scrolled #cu-header {
+    position: fixed;
+	z-index: 999;
 }
 .cu-seal #cu-header .cu-brand {
     padding-top: 18px;
@@ -24,6 +47,7 @@ a {
 #cu-header .buttons {
     top: unset;
     bottom: -45px;
+	z-index: 9;
 }
 #cu-header #navbar {
     border-top: 1px solid gray;
@@ -32,6 +56,11 @@ a {
 .cu-seal .cu-logo a {
     z-index: 99;
     position: relative;
+}
+#cu-search .mobile-button {
+    width: 40px;
+    height: 39px;
+    border-radius: 8px;
 }
 #navbar nav {
 	text-align: center;
@@ -45,7 +74,7 @@ a {
 	display: none;
 }
 .breadcrumb {
-    padding: 30px 60px 10px 50px;
+    padding: 30px 60px 14px 0;
 	border-radius: 0;
     background-color: transparent;
 	max-width: 1400px;
@@ -64,9 +93,16 @@ a {
 	font-family: canada-type-gibson,sans-serif;
 }
 .breadcrumb > li + li:before {
-    content: "/ ";
-    padding: 0 2px 0 6px;
-    color: #707070;
+	content: ' ';
+    display: inline-block;
+    background: url(../images/nav_arrow.png) 63% 49.99% no-repeat;
+    background-size: 41%;
+    border: 1px solid #a5a5a5;
+    width: 10px;
+    height: 10px;
+    padding: 0 0 0 0;
+    margin: 0px 4px -1px -3px;
+    border-radius: 50%;
 }
 #main {
     padding-top: 0;
@@ -89,6 +125,26 @@ a {
     background-color: #b31b1b;
 }
 
+.cu-seal.scrolled.not-front .cu-logo a {
+    background: url(../images/cu_logo_white45.gif) 0 0 no-repeat;
+    width: 168px;
+    height: 45px;
+}
+.cu-seal.scrolled.not-front #cu-header .cu-brand #site-name {
+    font-size: 32px;
+    line-height: 0;
+}
+.cu-seal.scrolled.not-front #site-name a span:nth-child(2) {
+    font-size: 32px;
+}
+.cu-seal.scrolled.not-front #cu-header .cu-brand .cu-unit {
+    width: 54%;
+}
+.cu-seal.scrolled.not-front #cu-header .cu-brand {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
 @media (min-width: 1200px) {
 	#cu-header .cu-brand #site-name {
 		font-size: 47px;
@@ -102,10 +158,11 @@ a {
 		height: 100px;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 767px) {
 	.cu-seal #cu-header .cu-brand .cu-unit {
 		text-align: center;
 		margin: -28px 0 0 0;
 		width: 73%;
 	}
+
 }

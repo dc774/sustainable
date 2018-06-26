@@ -2,10 +2,10 @@ global-styling:
   css:
     theme:
       css/typography.css: {}
-      css/sustainable.css: {}
       css/cornell.css: {}
       css/navbar.css: {}
       css/navs.css: {}
+      css/sustainable.css: {}
   js:
       js/sustainable.js: {}
       js/jquery.fitvids.js: {}
