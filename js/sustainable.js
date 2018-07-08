@@ -2,11 +2,17 @@
 
 jQuery(document).ready(function($) {	
 	
+	$.fn.exists = function () {
+		return this.length !== 0;
+	}
+
 	// Window Size Tracking
 	function resizeChecks() {
 		
 		// Mobile navigation
 		if (window.matchMedia('(max-width: 767px)').matches) {
+			$('#navbar ul').removeClass('expanded').addClass('collapsed');
+			$('#navbar li button .fa').removeClass('fa-minus').addClass('fa-plus');
 			$('#navbar .navbar-header').before( $('#navbar .menu.menu--main.nav.navbar-nav') );
 			$('#top-menu .menu--secondary').appendTo('#navbar > .container-fluid > .menu--main');
 			$('#navbar').css('display', 'none');
@@ -14,15 +20,143 @@ jQuery(document).ready(function($) {
 			$('#mobile-nav').css('display', 'block');
 			$('#mobile-nav-dimmer').addClass('closed');
 			$('body').removeClass('scrolled');
+			
+			
+			
+
+			$('#navbar > .container-fluid > ul > li ul li a.is-active').each(function () {
+				$(this).parents('.has-submenu').addClass('active-parent');
+			});
+
+			$('#navbar > .container-fluid > ul > li > a.is-active').each(function () {
+				$(this).parent('.has-submenu').addClass('active-parent');
+			});
+
+			$('#navbar > .container-fluid > ul > li.has-submenu.active-parent').prevAll('li').addClass('active-parent-sibling');
+			$('#navbar > .container-fluid > ul > li.has-submenu.active-parent').nextAll('li').addClass('active-parent-sibling');
+
+			$('#navbar > .container-fluid > ul > li.has-submenu').removeAttr('aria-haspopup').removeClass('expanded');
+			$('#navbar > .container-fluid > ul > li.has-submenu > a').removeAttr('aria-haspopup');
+			$('#navbar > .container-fluid > ul > li.has-submenu > a').removeAttr('aria-expanded');
+			$('#navbar > .container-fluid > ul > li.has-submenu > a > span.sr-only').remove();
+			
+			
+			
+			
+			
+			$('#navbar > .container-fluid > ul > li.has-submenu > a > button').each(function () {
+				$(this).remove();
+			});
+		
+			
+
+			
+			
+			
+			$('#navbar > .container-fluid > ul > li.has-submenu').each(function(){
+				$(this).unbind();
+				
+				
+				
+				if ( !$(this).children('button').length) {
+					$(this).append('<button><span class="fa fa-plus" aria-hidden="true"></span><span class="sr-only">Toggle the sub-menu</span></span></button>');
+				}
+				
+				
+				
+				
+				
+				$('button', this).on('click', function(e){
+					e.preventDefault();
+					if ($(this).parent('li').children('.sub-menu').hasClass('collapsed')) {
+						$(this).parent('li').children('.sub-menu.collapsed').removeClass('collapsed').addClass('expanded');
+						$(this).removeClass('closedButton').addClass('openButton');
+						$(this).parent('li').find('.fa-plus').removeClass('fa-plus').addClass('fa-minus');
+					}
+					else if ($(this).parent('li').children('.sub-menu').hasClass('expanded')) {
+						$(this).parent().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+						$(this).removeClass('openButton').addClass('closedButton');
+						$(this).parent('li').find('.fa-minus').removeClass('fa-minus').addClass('fa-plus');
+					}
+				});
+			});			
+			
+			
+			
+			
+			
+			
+			
+			if ( !$('.mobile-more-nav').exists() ) {
+				$('.menu--main .menu--secondary').wrap('<li class="mobile-more-nav has-submenu active-parent"><span class="mobile-more-nav-text">More</span></li>');
+				$('.menu--secondary').appendTo('.mobile-more-nav');
+			}
+			if ( !$('.mobile-more-nav button').exists() ) {
+				$('.mobile-more-nav').append('<button><span class="fa fa-plus" aria-hidden="true"></span><span class="sr-only">Toggle the sub-menu</span></span></button>');
+				$('.mobile-more-nav > ul').addClass('sub-menu collapsed');
+				$('.mobile-more-nav button').on('click', function(e){
+					e.preventDefault();
+					if ($(this).parent('li').children('.sub-menu').hasClass('collapsed')) {
+						$(this).parent('li').children('.sub-menu.collapsed').removeClass('collapsed').addClass('expanded');
+						$(this).removeClass('closedButton').addClass('openButton');
+						$(this).parent('li').find('.fa-plus').removeClass('fa-plus').addClass('fa-minus');
+					}
+					else if ($(this).parent('li').children('.sub-menu').hasClass('expanded')) {
+						$(this).parent().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+						$(this).removeClass('openButton').addClass('closedButton');
+						$(this).parent('li').find('.fa-minus').removeClass('fa-minus').addClass('fa-plus');
+					}
+				});
+			}
 		} 
 		else {
-			$('#navbar .menu.menu--main.nav.navbar-nav').appendTo('#block-sustainable-main-menu');
+			if ( !$('#navbar #block-mainnavigation-2 .menu--main').exists() ) {
+				$('#navbar .menu--main').appendTo('#block-mainnavigation-2');
+			}
+			$('#navbar .has-submenu > button').each(function () {
+				var hiddenButtonLink = $(this).parent('li').children('a');
+				$('<button><span><span class="sr-only">Toggle the sub-menu</span></span></button>').appendTo(hiddenButtonLink);
+				$(this).remove();
+			});
+			$('#navbar .menu--main').removeClass('collapsed');
+			$('#navbar nav > ul > li.has-submenu').each(function () {
+				$(this).removeClass('active-parent');
+				$(this).removeClass('active-parent-sibling');
+				$(this).addClass('expanded');
+				$(this).attr('aria-haspopup','true');
+				$(this).children('a').attr({'aria-haspopup': true,'aria-expanded': false});
+			});
+			$('.mobile-more-nav button').remove();
+			$('.menu--main .menu--secondary').unwrap();
+			$('.mobile-more-nav-text').remove();
 			$('.menu--main .menu--secondary').appendTo('#block-secondary-2');
 			$('#navbar').css('display', 'block');
 			$('#navbar .navbar-header').css('display', 'block');
 			$('#mobile-nav').css('display', 'none');
 			$('#mobile-nav-dimmer').removeClass('open');
 			$('#mobile-nav-dimmer').css('display','none');
+			
+			
+			
+			//Improve mouse support
+			var timer;
+			$('#navbar nav > ul > li.has-submenu').each(function(){
+				$(this).on('mouseover', function(){
+					$(this).siblings().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+					$(this).children('.sub-menu').removeClass('collapsed').addClass('expanded');
+					clearTimeout(timer);
+				});	
+				$(this).on('mouseout', function(){
+					timer = setTimeout(function(){
+						$('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+					}, 750);
+				});	
+			});	
+		
+			
+			
+			
+			
 		}
 
 	}
@@ -36,8 +170,9 @@ jQuery(document).ready(function($) {
 		$('body').addClass('landing-page');
 	}
 	
+	
 	// Fit videos
-	$('#main').fitVids({ customSelector: "iframe[src^='https://cdnapisec.kaltura.com']"});
+	//$('#main').fitVids({ customSelector: "iframe[src^='https://cdnapisec.kaltura.com']"});
 	
 	// Remove default nav toggle from main nav
 	$('#navbar li a').removeAttr('data-toggle');
@@ -52,9 +187,18 @@ jQuery(document).ready(function($) {
 		$('#mobile-nav').css('display', 'block');
 		$('#mobile-nav-dimmer').addClass('closed');
 		$('body').removeClass('scrolled');
+		if ( !$('.mobile-more-nav').exists() ) {
+			$('.menu--main .menu--secondary').wrap('<li class="mobile-more-nav"><span class="mobile-more-nav-text">More</span></li>');
+			$('.menu--secondary').appendTo('.mobile-more-nav');
+		}
 	} 
 	else {
-		$('#navbar .menu.menu--main.nav.navbar-nav').appendTo('#block-sustainable-main-menu');
+		if ( !$('#navbar #block-mainnavigation-2 .menu--main').exists() ) {
+			$('#navbar .menu--main').appendTo('#block-mainnavigation-2');
+		}
+		$('.mobile-more-nav button').remove();
+		$('.menu--main .menu--secondary').unwrap();
+		$('.mobile-more-nav-text').remove();
 		$('.menu--main .menu--secondary').appendTo('#block-secondary-2');
 		$('#navbar').css('display', 'block');
 		$('#navbar .navbar-header').css('display', 'block');
@@ -79,13 +223,138 @@ jQuery(document).ready(function($) {
 	$('nav h4').attr('id', 'pagination-heading');
 		
 	$(window).resize(resizeChecks);
-	resizeChecks();
+	//resizeChecks();
 	
 	
 	
 	// Window Load ------------------------------------------------------------
 	$(window).on("load", function() {
 		
+		$('#main > .row > aside').each(function () {
+			if ( !$(this).children().length ) {
+				$(this).siblings('section').removeClass('col-sm-8').addClass('col-sm-12');
+				$(this).remove();
+			}
+		});
+		
+		// Main Navigation
+		$('#navbar nav > ul > li').each(function () {
+			if ($(this).children('ul').length) {
+				$(this).addClass('has-submenu');
+				$(this).attr('aria-haspopup', 'true');
+				$(this).children('ul').addClass('sub-menu collapsed');
+			}
+		});
+	
+		// Mobile main Navigation
+		$('#navbar > .container-fluid > ul > li').each(function () {
+			if ($(this).children('ul').length) {
+				$(this).addClass('has-submenu');
+				$(this).children('ul').addClass('sub-menu collapsed');
+			}
+		});
+	
+		// Mobile main Navigation
+		$('#navbar > .container-fluid > ul > li ul li a.is-active').each(function () {
+			$(this).parents('.has-submenu').addClass('active-parent');
+		});
+	
+		$('#navbar > .container-fluid > ul > li > a.is-active').each(function () {
+			$(this).parent('.has-submenu').addClass('active-parent');
+		});
+		
+		$('#navbar > .container-fluid > ul > li.has-submenu.active-parent').prevAll('li').addClass('active-parent-sibling');
+		$('#navbar > .container-fluid > ul > li.has-submenu.active-parent').nextAll('li').addClass('active-parent-sibling');
+	
+		$('#navbar nav > ul > li.has-submenu > a').attr({'aria-haspopup': true,'aria-expanded': false});
+		
+	
+		//Improve mouse support
+		var timer;
+		$('#navbar nav > ul > li.has-submenu').each(function(){
+			$(this).on('mouseover', function(){
+				$(this).siblings().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+				$(this).children('.sub-menu').removeClass('collapsed').addClass('expanded');
+				clearTimeout(timer);
+			});	
+			$(this).on('mouseout', function(){
+				timer = setTimeout(function(){
+					$('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+				}, 750);
+			});	
+		});	
+		
+		//Improve keyboard support - Toggle submenu using a hidden button
+		if ($(window).width() > 767) {
+			
+			$('#navbar nav > ul > li.has-submenu > a').each(function(){
+				$(this).append('<button><span><span class="sr-only">Toggle the sub-menu</span></span></button>');
+				$(this).append('<span class="sr-only">Press tab again to toggle the sub-menu</span>'); // Let screen readers know about the hidden button
+				$(this).parent().attr('aria-haspopup', 'true').addClass('expanded');
+				$('button', this).on('click', function(e){
+					e.preventDefault();
+					if ($(this).parents('li').children('.sub-menu').hasClass('collapsed')) {
+						$(this).attr('aria-expanded', 'true');
+						$(this).parents('li').children('.sub-menu.collapsed').removeClass('collapsed').addClass('expanded');
+						$(this).removeClass('closedButton').addClass('openButton');
+					}
+					else if ($(this).parents('li').children('.sub-menu').hasClass('expanded')) {
+						$(this).attr('aria-expanded', 'false');
+						$(this).parent().parent().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+						$(this).removeClass('openButton').addClass('closedButton');
+					}
+				});
+			});
+			
+			
+			// Close sub-menu when leaving the last item in the list (if it's the last sub-menu in the tree)
+			$('#navbar nav > ul > li.has-submenu .sub-menu li:last-child').on('focusout', function(){
+				if ( $(this).find('.sub-menu').length === 0) {
+					$(this).parents('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+					$(this).parents('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
+				}
+			});
+					
+			// Collapse all other sub-menus when any top level parent is focused
+			$('#navbar nav > ul > li > a').on('focus', function(){
+				$(this).parent().siblings('.has-submenu').find('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+				$(this).parent().siblings('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
+			});
+			
+			// Collapse sub-menu when expanded button loses focus away from sub-menu
+			$('#navbar nav > ul > .has-submenu > a').on('focus', function(){
+				$(this).parents('li').children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+				$(this).parents('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
+			});
+			
+			
+		}
+
+		
+		
+		//Improve keyboard support - Toggle submenu using a hidden button
+		else {
+			
+			$('#navbar > .container-fluid > ul > li.has-submenu').each(function(){
+				$(this).append('<button><span class="fa fa-plus" aria-hidden="true"></span><span class="sr-only">Toggle the sub-menu</span></span></button>');
+				$('button', this).on('click', function(e){
+					e.preventDefault();
+					if ($(this).parent('li').children('.sub-menu').hasClass('collapsed')) {
+						$(this).parent('li').children('.sub-menu.collapsed').removeClass('collapsed').addClass('expanded');
+						$(this).removeClass('closedButton').addClass('openButton');
+						$(this).parent('li').find('.fa-plus').removeClass('fa-plus').addClass('fa-minus');
+					}
+					else if ($(this).parent('li').children('.sub-menu').hasClass('expanded')) {
+						$(this).parent().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
+						$(this).removeClass('openButton').addClass('closedButton');
+						$(this).parent('li').find('.fa-minus').removeClass('fa-minus').addClass('fa-plus');
+					}
+				});
+			});
+			
+		}
+		
+	
 		if (window.matchMedia('(max-width: 767px)').matches) {
 			$('body').removeClass('scrolled');
 		} 

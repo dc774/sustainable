@@ -1,7 +1,7 @@
 /***** Navigation *****/
 
-#navbar .nav li {
-    width: 23%;
+#navbar nav > ul > li {
+    margin: 0 7% !important;
 }
 #navbar .nav > li > a {
 	padding: 8px 3px 7px;
@@ -10,6 +10,20 @@
     font-size: 18px;
     color: #767676;
     border-bottom: 5px solid transparent;
+}
+#navbar .nav > li > .mobile-more-nav-text {
+	padding: 8px 3px 7px;
+    margin-bottom: -7px;
+    display: inline-block;
+    font-size: 18px;
+    color: #767676;
+    border-bottom: 5px solid transparent;
+	line-height: 20px;
+}
+.menu--secondary.nav > li > a:hover, 
+.menu--secondary.nav > li > a:focus {
+    text-decoration: none;
+    background-color: transparent;
 }
 .path-frontpage #navbar .nav > li > a {
 	text-decoration: none;
@@ -29,10 +43,6 @@ a:focus .fa,
 }
 #navbar .nav > li.active > a {
     border-bottom: 5px solid #333;
-}
-#navbar .nav > li > a:focus,
-#navbar .nav > li > a:hover {
-    border-bottom: 5px solid #b31b1b;
 }
 
 #main #block-mainnavigation-menu {

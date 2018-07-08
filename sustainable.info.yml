@@ -9,6 +9,7 @@ libraries:
 
 ckeditor_stylesheets:
   - css/sustainable.css
+  - css/cke.css
   - ../cwd_base_bootstrap/sass/base.scss
   - ../cwd_base_bootstrap/fonts/cornell-custom.css
   - ../cwd_base_bootstrap/fonts/font-awesome.min.css
