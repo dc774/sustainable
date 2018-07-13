@@ -408,7 +408,9 @@ footer .region-footer section span.contact-info a {
 .path-frontpage #main .block-views-blockspotlight-block-2 .more-link:hover {
     text-decoration: none;
 }
-
+.paragraph--type--bp-columns__3col .paragraph__column .field img {
+	padding: 20px 0 12px 0;
+}
 
 /* Main navigation */
 
