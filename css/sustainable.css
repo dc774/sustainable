@@ -13,10 +13,21 @@
     background: #fff;
     font-size: 30px;
 }
+.fa-external-link {
+    margin: 0 0 0 5px;
+}
 .bicycle-wrap {
     text-align: center;
     margin-top: -40px;
 	margin-bottom: 5px;
+}
+.mobile-home-link {
+    color: #333 !important;
+    text-decoration: none !important;
+}
+.mobile-home-link:hover {
+    color: #b31b1b !important;
+    text-decoration: underline !important;
 }
 hr.bicycle {
     width: 42%;
@@ -437,6 +448,9 @@ footer .region-footer section span.contact-info a {
 }
 #navbar > .container-fluid > ul li.has-submenu a.is-active {
 	color: #b31b1b;
+}
+.mobile-home-link.is-active {
+	color: #b31b1b !important;
 }
 #navbar > .container-fluid > ul li .sub-menu.expanded {
 	display: block;
@@ -1019,6 +1033,9 @@ footer .region-subfooter #social-icons .fa {
 section.col-sm-12 .region-content {
     padding: 0 45px;
 }
+.path-frontpage #main > .row > section.col-sm-12 .region-content {
+    padding: 0 15px;
+}
 blockquote {
     padding: 20px;
     border: none;
@@ -1458,6 +1475,7 @@ blockquote p {
 	#navbar .nav:not('.menu--secondary') > li > a:hover {
 		border-bottom: 5px solid transparent !important;
 	}
+	.mobile-home-list-item.active-parent, 
 	#navbar > .container-fluid > ul > li.has-submenu.active-parent, 
 	#navbar .nav > li.active-parent:focus, 
 	#navbar .nav > li.active-parent:hover {

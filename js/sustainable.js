@@ -6,6 +6,14 @@ jQuery(document).ready(function($) {
 		return this.length !== 0;
 	}
 
+	var pathArray = window.location.pathname.split( '/' );	
+	var child_alias = pathArray[2];
+	//var one = pathArray[0];
+	//var two = pathArray[1];
+	//var three = pathArray[2];
+	//var four = pathArray[3];
+	//console.log('-'+one+'\n-'+two+'\n-'+three+'\n-'+four);
+	
 	// Window Size Tracking
 	function resizeChecks() {
 		
@@ -21,9 +29,18 @@ jQuery(document).ready(function($) {
 			$('#mobile-nav-dimmer').addClass('closed');
 			$('body').removeClass('scrolled');
 			
+			if ( !$('.mobile-home-list-item').exists() ) {
+				$('#navbar .menu--main').prepend('<li class="mobile-home-list-item"><a class="mobile-home-link" href="/">Home</a></li>');
+			}
+			
+			if ( $('.mobile-home-list-item').exists() && $('#homepage-flag').exists() ) {
+				$('.mobile-home-link').addClass('is-active');
+				$('.mobile-home-list-item').addClass('active-parent');
+				$('.mobile-home-list-item').prevAll('li').removeClass('active-parent').addClass('active-parent-sibling');
+				$('.mobile-home-list-item').nextAll('li').removeClass('active-parent').addClass('active-parent-sibling');
+			}
 			
 			
-
 			$('#navbar > .container-fluid > ul > li ul li a.is-active').each(function () {
 				$(this).parents('.has-submenu').addClass('active-parent');
 			});
@@ -41,28 +58,19 @@ jQuery(document).ready(function($) {
 			$('#navbar > .container-fluid > ul > li.has-submenu > a > span.sr-only').remove();
 			
 			
-			
-			
-			
 			$('#navbar > .container-fluid > ul > li.has-submenu > a > button').each(function () {
 				$(this).remove();
 			});
 		
-			
-
-			
 			
 			
 			$('#navbar > .container-fluid > ul > li.has-submenu').each(function(){
 				$(this).unbind();
 				
 				
-				
 				if ( !$(this).children('button').length) {
 					$(this).append('<button><span class="fa fa-plus" aria-hidden="true"></span><span class="sr-only">Toggle the sub-menu</span></span></button>');
 				}
-				
-				
 				
 				
 				
@@ -136,7 +144,9 @@ jQuery(document).ready(function($) {
 			$('#mobile-nav-dimmer').removeClass('open');
 			$('#mobile-nav-dimmer').css('display','none');
 			
-			
+			if ( $('.mobile-home-list-item').exists() ) {
+				$('.mobile-home-list-item').remove();
+			}
 			
 			//Improve mouse support
 			var timer;
@@ -161,10 +171,6 @@ jQuery(document).ready(function($) {
 
 	}
 	
-	var pathArray = window.location.pathname.split( '/' );	
-	var child_alias = pathArray[2];
-	//console.log('-'+one+'\n-'+two+'\n-'+three+'\n-'+four);
-	
 	// If we're on a landing page
 	if (child_alias === undefined) {
 		$('body').addClass('landing-page');
@@ -172,7 +178,29 @@ jQuery(document).ready(function($) {
 	
 	
 	// Fit videos
-	//$('#main').fitVids({ customSelector: "iframe[src^='https://cdnapisec.kaltura.com']"});
+	$('#main').fitVids();
+	
+	// Check if link is external
+	$.fn.isExternal = function() {
+		var host = window.location.host;
+		var link = $('<a>', {
+		href: this.attr('href')
+		})[0].hostname;
+
+		return (link !== host);
+	};
+	
+	// Add external link icon
+	//$('a').each(function () {
+		//if( $(this).isExternal() ) {
+			//$(this).addClass('external');
+		//}
+	//});
+	
+	$('a.external').each(function () {
+		$(this).append('<span class="fa fa-external-link" aria-hidden="true"></span>');
+	});
+
 	
 	// Remove default nav toggle from main nav
 	$('#navbar li a').removeAttr('data-toggle');
@@ -268,6 +296,8 @@ jQuery(document).ready(function($) {
 	
 		$('#navbar nav > ul > li.has-submenu > a').attr({'aria-haspopup': true,'aria-expanded': false});
 		
+
+		
 	
 		//Improve mouse support
 		var timer;
@@ -327,6 +357,7 @@ jQuery(document).ready(function($) {
 				$(this).parents('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
 			});
 			
+			$('.mobile-home-list-item').remove();
 			
 		}
 
@@ -351,6 +382,17 @@ jQuery(document).ready(function($) {
 					}
 				});
 			});
+			
+			if ( !$('.mobile-home-list-item').exists() ) {
+				$('#navbar .menu--main').prepend('<li class="mobile-home-list-item"><a class="mobile-home-link" href="/">Home</a></li>');
+			}
+			
+			if ( $('.mobile-home-list-item').exists() && $('#homepage-flag').exists() ) {
+				$('.mobile-home-link').addClass('is-active');
+				$('.mobile-home-list-item').addClass('active-parent');
+				$('.mobile-home-list-item').prevAll('li').removeClass('active-parent').addClass('active-parent-sibling');
+				$('.mobile-home-list-item').nextAll('li').removeClass('active-parent').addClass('active-parent-sibling');
+			}
 			
 		}
 		
