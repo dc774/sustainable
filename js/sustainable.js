@@ -171,6 +171,29 @@ jQuery(document).ready(function($) {
 
 	}
 	
+	
+																   
+$('.paragraph--bp-accordion-container .panel-title > a').each(function(){
+	
+	$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
+
+	$(this).on('click',function(){
+		
+		if( $(this).attr('aria-expanded') == "false" ) {
+			$(this).find('.fa-plus').remove();
+			$('<i class="fa fa-minus" aria-hidden="true"></i>').appendTo(this);
+		} else {
+			$(this).find('.fa-minus').remove();
+			$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
+		}
+		
+	});	
+	
+});	
+																   
+																   
+	
+	
 	// If we're on a landing page
 	if (child_alias === undefined) {
 		$('body').addClass('landing-page');

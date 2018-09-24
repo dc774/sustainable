@@ -56,6 +56,8 @@
  * @see html.html.twig
  */
 #}
+
+{% set remove_sidebar = node.field_remove_sidebar_.value %}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
 {# Breadcrumbs #}
@@ -75,21 +77,19 @@
         {% endblock %}
       {% endif %}
 
-      {# Sidebar First #}
-      {% if page.sidebar_first %}
-        {% block sidebar_first %}
-          <aside class="col-sm-4" role="complementary">
-            {{ page.sidebar_first }}
-          </aside>
-        {% endblock %}
-      {% endif %}
+      {# Sidebar First #}  
+		  {% if page.sidebar_first and not remove_sidebar %}
+			{% block sidebar_first %}
+			  <aside class="col-sm-4" role="complementary">
+				{{ page.sidebar_first }}
+			  </aside>
+			{% endblock %}
+		  {% endif %}
 
       {# Content #}
       {%
         set content_classes = [
-          page.sidebar_first and page.sidebar_second ? 'col-sm-6',
-          page.sidebar_first and page.sidebar_second is empty ? 'col-sm-8',
-          page.sidebar_second and page.sidebar_first is empty ? 'col-sm-8',
+          remove_sidebar ? 'col-sm-12' : 'col-sm-8',
           page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
         ]
       %}

@@ -1059,6 +1059,29 @@ blockquote p {
     line-height: 38px!important;
     font-style: italic;
 }
+
+
+.paragraph--bp-accordion-container .panel-title > a > .fa-plus, 
+.paragraph--bp-accordion-container .panel-title > a > .fa-minus {
+	float: right;
+}
+
+.paragraph--bp-accordion-container .panel-heading {
+    padding: 6px 5px;
+}
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:focus,
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:active,
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a > .fa,
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title {
+    background: #3bc8b3 !important;
+}
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:focus,
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:active,
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a > .fa,
+body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a {
+    color: #fff !important;
+}
+
 /***** Responsive *****/
 
 @media (max-width: 1350px) {
@@ -1758,4 +1781,13 @@ blockquote p {
     	padding: 0 0;
 	}
 
+}
+
+@media (min-width: 480px) {
+	.align-left {
+		float: left;
+		margin: 0.3em 20px 2px 0;
+		width: auto;
+		max-width: 40%;
+	}
 }
