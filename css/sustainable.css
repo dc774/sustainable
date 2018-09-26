@@ -1,4 +1,15 @@
 
+#main .panel.accent-red.fill.field.field--name-field-message,
+#main .panel.accent-green.fill.field.field--name-field-message {
+    padding: 12px 12px;
+	margin-bottom: 32px;
+}
+#main .panel.accent-red.fill.field.field--name-field-message p,
+#main .panel.accent-green.fill.field.field--name-field-message p {
+    font-size: 16px;
+	line-height: 19px;
+	color: #b31b1b;
+}
 .flip-horizontal {
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);

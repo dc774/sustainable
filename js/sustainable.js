@@ -173,26 +173,59 @@ jQuery(document).ready(function($) {
 	
 	
 																   
-$('.paragraph--bp-accordion-container .panel-title > a').each(function(){
-	
-	$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
+	$('.paragraph--bp-accordion-container .panel-title > a').each(function(){
 
-	$(this).on('click',function(){
-		
-		if( $(this).attr('aria-expanded') == "false" ) {
-			$(this).find('.fa-plus').remove();
-			$('<i class="fa fa-minus" aria-hidden="true"></i>').appendTo(this);
-		} else {
-			$(this).find('.fa-minus').remove();
-			$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
-		}
-		
+		$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
+
+		$(this).on('click',function(){
+
+			if( $(this).attr('aria-expanded') == "false" ) {
+				$(this).find('.fa-plus').remove();
+				$('<i class="fa fa-minus" aria-hidden="true"></i>').appendTo(this);
+			} else {
+				$(this).find('.fa-minus').remove();
+				$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
+			}
+
+		});	
+
 	});	
 	
-});	
-																   
-																   
 	
+	
+	//match paragraph column heights
+	//$(function() {
+		if ($(window).width() > 768) {
+			$('div[class^="paragraph--type--bp-columns__"]').matchHeight();
+		}
+	//});
+			
+	
+
+	$('img').each(function () {
+		var theimagestyle = $(this).attr('data-image-style');
+		if( theimagestyle == 'circle_300x300_' ) {
+			$(this).parent('figure').css('border-radius','50%')
+			$(this).parent('figure').css('width','300px')
+			$(this).parent('figure').css('height','300px')
+		}
+		if( theimagestyle == 'circle_250x250_' ) {
+			$(this).parent('figure').css('border-radius','50%')
+			$(this).parent('figure').css('width','2500px')
+			$(this).parent('figure').css('height','250px')
+		}
+		if( theimagestyle == 'circle_200x200_' ) {
+			$(this).parent('figure').css('border-radius','50%')
+			$(this).parent('figure').css('width','200px')
+			$(this).parent('figure').css('height','200px')
+		}
+		if( theimagestyle == 'circle_150x150_' ) {
+			$(this).parent('figure').css('border-radius','50%')
+			$(this).parent('figure').css('width','150px')
+			$(this).parent('figure').css('height','150px')
+		}
+	});
+
 	
 	// If we're on a landing page
 	if (child_alias === undefined) {
@@ -280,6 +313,7 @@ $('.paragraph--bp-accordion-container .panel-title > a').each(function(){
 	
 	// Window Load ------------------------------------------------------------
 	$(window).on("load", function() {
+		
 		
 		$('#main > .row > aside').each(function () {
 			if ( !$(this).children().length ) {
