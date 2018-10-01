@@ -205,24 +205,16 @@ jQuery(document).ready(function($) {
 	$('img').each(function () {
 		var theimagestyle = $(this).attr('data-image-style');
 		if( theimagestyle == 'circle_300x300_' ) {
-			$(this).parent('figure').css('border-radius','50%')
-			$(this).parent('figure').css('width','300px')
-			$(this).parent('figure').css('height','300px')
+			$(this).parent('figure').css('background','#ffffff');
 		}
 		if( theimagestyle == 'circle_250x250_' ) {
-			$(this).parent('figure').css('border-radius','50%')
-			$(this).parent('figure').css('width','2500px')
-			$(this).parent('figure').css('height','250px')
+			$(this).parent('figure').css('background','#ffffff');
 		}
 		if( theimagestyle == 'circle_200x200_' ) {
-			$(this).parent('figure').css('border-radius','50%')
-			$(this).parent('figure').css('width','200px')
-			$(this).parent('figure').css('height','200px')
+			$(this).parent('figure').css('background','#ffffff');
 		}
 		if( theimagestyle == 'circle_150x150_' ) {
-			$(this).parent('figure').css('border-radius','50%')
-			$(this).parent('figure').css('width','150px')
-			$(this).parent('figure').css('height','150px')
+			$(this).parent('figure').css('background','#ffffff');
 		}
 	});
 

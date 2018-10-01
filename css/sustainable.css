@@ -1,14 +1,21 @@
 
 #main .panel.accent-red.fill.field.field--name-field-message,
+#main .panel.accent-blue.fill.field.field--name-field-message,
 #main .panel.accent-green.fill.field.field--name-field-message {
     padding: 12px 12px;
 	margin-bottom: 32px;
 }
 #main .panel.accent-red.fill.field.field--name-field-message p,
+#main .panel.accent-blue.fill.field.field--name-field-message p,
 #main .panel.accent-green.fill.field.field--name-field-message p {
     font-size: 16px;
 	line-height: 19px;
-	color: #b31b1b;
+}
+img[data-image-style="circle_300x300_"] + figcaption,
+img[data-image-style="circle_250x250_"] + figcaption,
+img[data-image-style="circle_200x200_"] + figcaption,
+img[data-image-style="circle_150x150_"] + figcaption {
+	text-align: center;
 }
 .flip-horizontal {
     -moz-transform: scaleX(-1);
@@ -1084,13 +1091,13 @@ body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:active,
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a > .fa,
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title {
-    background: #3bc8b3 !important;
+    background: #ecf2fb !important;
 }
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:focus,
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a:active,
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a > .fa,
 body #main .paragraph--bp-accordion-container .panel-heading > .panel-title > a {
-    color: #fff !important;
+
 }
 
 /***** Responsive *****/
