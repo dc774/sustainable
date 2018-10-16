@@ -22,10 +22,8 @@ a img:hover {
 }
 
 /***** Header *****/
-
 .cu-seal #cu-header {
-    width: 100%;
-    background: #fff;
+	
 }
 .cu-seal.scrolled #cu-header {
     position: fixed;
@@ -35,20 +33,30 @@ a img:hover {
     padding-top: 18px;
     padding-bottom: 18px;
 	padding-left: 50px;
-    font-family: canada-type-gibson,sans-serif;
+    font-family: canada-type-gibson, sans-serif;
     position: relative;
 }
 .cu-seal .cu-search {
-    border-bottom: 50px solid #b31b1b;
+    border: none;
 }
 .cu-seal .cu-search > .container-fluid {
 	position: relative;
 }
-#cu-header .buttons {
-    top: unset;
-    bottom: -45px;
-	z-index: 9;
+.buttons {
+    top: 8.335em;
+    z-index: 50;
+    position: absolute;
+    right: 15px;
 }
+/*#cu-search {
+    margin-top: -139px;
+}*/
+
+
+
+
+
+
 #cu-header #navbar {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
@@ -58,12 +66,24 @@ a img:hover {
     position: relative;
 }
 #cu-search .mobile-button {
-    width: 40px;
-    height: 39px;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    background-color: #e5271b;
+    border-radius: 2px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }
-#navbar nav {
+#page-header #block-mainnavigation-2 {
 	text-align: center;
+    padding-right: 15px;
+    margin-top: 8px;
+    width: 628px;
+	float: right;
+    clear: both;
 }
 .navbar-nav {
     display: inline-block;
@@ -92,8 +112,8 @@ a img:hover {
     font-size: 14px;
 	font-family: canada-type-gibson,sans-serif;
 }
-.breadcrumb > li + li:before {
-	content: ' ';
+/*.breadcrumb > li + li:before {
+	content: '/';
     display: inline-block;
     background: url(../images/nav_arrow.png) 63% 49.99% no-repeat;
     background-size: 41%;
@@ -103,6 +123,11 @@ a img:hover {
     padding: 0 0 0 0;
     margin: 0px 4px -1px -3px;
     border-radius: 50%;
+}*/
+.breadcrumb > li + li:before {
+    content: "/ ";
+    padding: 0 2px;
+    color: #999;
 }
 #main {
     padding-top: 0;
@@ -117,13 +142,13 @@ a img:hover {
 	padding: 36px 40px 5px 0;
 	line-height: 1.42857;
 }
-#cu-search-button {
-    background-color: #a01114;
+/*#cu-search-button {
+    background-color: #e5271b;
     border-radius: 8px;
 }
 #cu-search-button.open {
     background-color: #b31b1b;
-}
+}*/
 
 .cu-seal.scrolled.not-front .cu-logo a {
     background: url(../images/cu_logo_white45.gif) 0 0 no-repeat;

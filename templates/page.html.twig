@@ -60,6 +60,22 @@
 {% set remove_sidebar = node.field_remove_sidebar_.value %}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 
+{% if node.field_hero_background is not empty %}
+  {% set header_background = file_url(node.field_hero_background.entity.uri.value) %}
+{% else %}
+  {% set header_background = node.field_hero_background.setting('default_image') %}
+  {% set header_background = file_url(header_background.fileuri) %}
+{% endif %}
+
+<div id="search-bar">{{ page.search_bar }}</div>
+
+{% block header %}
+	<header id="cu-header" style="background: url('{{ header_background }}') left top no-repeat; background-size: cover; position: relative;">
+		<div id="hero-overlay" style="background: url({{ path('<front>') }}sites/default/files/2018-10/duotonebackground_1.png) top left no-repeat; background-size: cover; position: absolute; z-index: 0; width: 100%; height: 100%"></div>
+		<div id="page-header">{{ page.header }}</div>
+	</header>
+{% endblock %}
+
 {# Breadcrumbs #}
 {{ page.breadcrumbs }}
 
@@ -67,15 +83,6 @@
 {% block main %}
   <div role="main" id="main" class="main-container {{ container }} js-quickedit-main-content">
     <div class="row">
-
-      {# Header #}
-      {% if page.header %}
-        {% block header %}
-          <div class="col-sm-12" role="heading">
-            {{ page.header }}
-          </div>
-        {% endblock %}
-      {% endif %}
 
       {# Sidebar First #}  
 		  {% if page.sidebar_first and not remove_sidebar %}

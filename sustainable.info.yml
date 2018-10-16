@@ -19,12 +19,15 @@ stylesheets-remove:
   - ../cwd_base_bootstrap/bootstrap/stylesheets/bootstrap/_dropdowns.scss
 
 regions:
-  top_menu: 'Top menu'
-  navigation_collapsible: 'Main navigation'
+  search_bar: 'Search Bar'
+  header: 'Header'
   breadcrumbs: 'Breadcrumbs'
   help: 'Help'
-  sidebar_first: 'Primary sidebar'
   content: 'Content'
+  timeline: 'Timeline'
+  partners: 'Partners'
+  awards: 'Awards'
+  sidebar_first: 'Primary sidebar'
   sidebar_second: 'Secondary sidebar'
   spotlights: 'Spotlights'
   footer: 'Footer'

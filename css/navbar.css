@@ -1,2 +1,13 @@
 /***** Navigation bar *****/
 
+@media (min-width: 768px) {}
+	.navbar-nav {
+		float: right;
+	}
+	.navbar-nav > li > a {
+		padding-top: 13px;
+		padding-bottom: 13px;
+		font-size: 18px;
+		color: #fff;
+	}
+}

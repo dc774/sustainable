@@ -64,6 +64,7 @@
 %}
 <!DOCTYPE html>
 <html {{ html_attributes }}>
+
   <head>
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
@@ -71,87 +72,21 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
 	<link rel="stylesheet" href="https://use.typekit.net/cbb1grn.css">
   </head>
+  
   <body{{ attributes.addClass(body_classes) }}>
+  
 	<div id="skipnav"><a href="#main">{{ 'Skip to main content'|t }}</a></div>
+	
 	<div id="mobile-nav-dimmer" class="closed"></div>
+	
 	{{ page_top }}
-    <header id="cu-header">
-      <div id="cu-search" class="cu-search">
-        <div class="{{ container }}">
-          <form id="cu-search-form" role="search" action="http://www.cornell.edu/search/">
-            <label for="cu-search-query" class="sr-only">Search:</label>
-            <input type="text" id="cu-search-query" name="s" value="" size="30">
-            <button name="btnG" id="cu-search-submit" type="submit" value="go"><span class="sr-only">Submit Search</span></button>
-
-            <div class="search-filters">
-              <h2 class="sr-only">Search Filters:</h2>
-              <input type="radio" id="cu-search-filter1" name="sitesearch" value="thissite" checked="checked">
-              <label for="cu-search-filter1"><span class="sr-only">Search </span>This Site</label>
-              <input type="radio" id="cu-search-filter2" name="sitesearch" value="cornell">
-              <label for="cu-search-filter2"><span class="sr-only">Search </span>Cornell</label>
-            </div>
-          </form>
-		
-          <div id="top-menu">
-            {{ page.top_menu }}
-          </div>		
-		
-          <div class="buttons">
-            <button class="mobile-button" id="mobile-nav">Main Menu</button>
-            <button class="mobile-button" id="cu-search-button">Search</button>
-          </div>		
-		
-        </div>
-      </div>
-      <div class="cu45-helper"></div>
-      <div id="cu-brand" class="{{ container }} cu-brand">
-        <div id="cu-logo" class="cu-logo"><a class="logo-link" href="http://www.cornell.edu"><img class="sr-only" src="/{{ directory }}/images/cornell/bold_cornell_logo_simple_b31b1b.svg" alt="Cornell University" width="245" height="62"></a></div>
-        <div class="cu-unit">
-        {% if theme.settings.cwd_base_bootstrap_h2 is not empty %}
-			{% if is_front %}
-			  <h1 id="site-name"><a href="/"><span>Sustainable</span> <span>Campus</span></a></h1>
-			{% else %}
-			  <div id="site-name"><a href="/"><span>Sustainable</span> <span>Campus</span></a></div>
-			{% endif %}
-		{% endif %}
-        {% if theme.settings.cwd_base_bootstrap_h3 is not empty %}
-          <h3 class="sans">{{ theme.settings.cwd_base_bootstrap_h3 }}</h3>
-        {% endif %}
-        </div>
-      </div>
-	  
-	  <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-		{% if not navbar_attributes.hasClass(container) %}
-		<div class="{{ container }}">
-		{% endif %}
-		<div class="navbar-header">
-		  {{ page.navigation }}
-		  {# .btn-navbar is used as the toggle for collapsed navbar content #}
-		  {% if page.navigation_collapsible %}
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-			  <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-		  {% endif %}
-		</div>
-		{# Navigation (collapsible) #}
-		{% if page.navigation_collapsible %}
-		  <div id="navbar-collapse" class="navbar-collapse collapse">
-			{{ page.navigation_collapsible }}
-		  </div>
-		{% endif %}
-		{% if not navbar_attributes.hasClass(container) %}
-		  </div>
-		{% endif %}
-	  </header>
-	  
-    </header>
-
-    {{ breadcrumbs }}
+	
     {{ page }}
+	
     {{ page_bottom }}
+	
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+	
   </body>
+  
 </html>

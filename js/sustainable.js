@@ -22,12 +22,11 @@ jQuery(document).ready(function($) {
 			$('#navbar ul').removeClass('expanded').addClass('collapsed');
 			$('#navbar li button .fa').removeClass('fa-minus').addClass('fa-plus');
 			$('#navbar .navbar-header').before( $('#navbar .menu.menu--main.nav.navbar-nav') );
-			$('#top-menu .menu--secondary').appendTo('#navbar > .container-fluid > .menu--main');
+			$('#page-header .menu--secondary').appendTo('#navbar > .container-fluid > .menu--main');
 			$('#navbar').css('display', 'none');
 			$('#navbar .navbar-header').css('display', 'none');
 			$('#mobile-nav').css('display', 'block');
 			$('#mobile-nav-dimmer').addClass('closed');
-			$('body').removeClass('scrolled');
 			
 			if ( !$('.mobile-home-list-item').exists() ) {
 				$('#navbar .menu--main').prepend('<li class="mobile-home-list-item"><a class="mobile-home-link" href="/">Home</a></li>');
@@ -127,7 +126,7 @@ jQuery(document).ready(function($) {
 				$(this).remove();
 			});
 			$('#navbar .menu--main').removeClass('collapsed');
-			$('#navbar nav > ul > li.has-submenu').each(function () {
+			$('#page-header #block-mainnavigation-2 > ul > li.has-submenu').each(function () {
 				$(this).removeClass('active-parent');
 				$(this).removeClass('active-parent-sibling');
 				$(this).addClass('expanded');
@@ -150,7 +149,7 @@ jQuery(document).ready(function($) {
 			
 			//Improve mouse support
 			var timer;
-			$('#navbar nav > ul > li.has-submenu').each(function(){
+			$('#page-header #block-mainnavigation-2 > ul > li.has-submenu').each(function(){
 				$(this).on('mouseover', function(){
 					$(this).siblings().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
 					$(this).children('.sub-menu').removeClass('collapsed').addClass('expanded');
@@ -173,7 +172,7 @@ jQuery(document).ready(function($) {
 	
 	
 																   
-	$('.paragraph--bp-accordion-container .panel-title > a').each(function(){
+	/*$('.paragraph--bp-accordion-container .panel-title > a').each(function(){
 
 		$('<i class="fa fa-plus" aria-hidden="true"></i>').appendTo(this);
 
@@ -189,14 +188,13 @@ jQuery(document).ready(function($) {
 
 		});	
 
-	});	
-	
-	
+	});	*/
 	
 	//match paragraph column heights
 	//$(function() {
 		if ($(window).width() > 768) {
 			$('div[class^="paragraph--type--bp-columns__"]').matchHeight();
+			$('#awards .award').matchHeight();
 		}
 	//});
 			
@@ -227,6 +225,7 @@ jQuery(document).ready(function($) {
 	
 	// Fit videos
 	$('#main').fitVids();
+	$('.container-fluid').fitVids();
 	
 	// Check if link is external
 	$.fn.isExternal = function() {
@@ -257,12 +256,11 @@ jQuery(document).ready(function($) {
 	// Mobile navigation
 	if (window.matchMedia('(max-width: 767px)').matches) {
 		$('#navbar .navbar-header').before( $('#navbar .menu.menu--main.nav.navbar-nav') );
-		$('#top-menu .menu--secondary').appendTo('#navbar > .container-fluid > .menu--main');
+		$('#page-header .menu--secondary').appendTo('#navbar > .container-fluid > .menu--main');
 		$('#navbar').css('display', 'none');
 		$('#navbar .navbar-header').css('display', 'none');
 		$('#mobile-nav').css('display', 'block');
 		$('#mobile-nav-dimmer').addClass('closed');
-		$('body').removeClass('scrolled');
 		if ( !$('.mobile-more-nav').exists() ) {
 			$('.menu--main .menu--secondary').wrap('<li class="mobile-more-nav"><span class="mobile-more-nav-text">More</span></li>');
 			$('.menu--secondary').appendTo('.mobile-more-nav');
@@ -307,6 +305,19 @@ jQuery(document).ready(function($) {
 	$(window).on("load", function() {
 		
 		
+		var parentPage = $('h2#block-mainnavigation-menu').text();				
+		var newParentPage = parentPage.replace('-',' ');
+		var newNewParentPage = capitalize_Words(newParentPage);
+		
+		$('#block-mainnavigation-menu').html(newNewParentPage);
+		
+		
+		//capitalize_Words 
+		function capitalize_Words(str) {
+			return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+		}		
+		
+
 		$('#main > .row > aside').each(function () {
 			if ( !$(this).children().length ) {
 				$(this).siblings('section').removeClass('col-sm-8').addClass('col-sm-12');
@@ -315,7 +326,7 @@ jQuery(document).ready(function($) {
 		});
 		
 		// Main Navigation
-		$('#navbar nav > ul > li').each(function () {
+		$('#page-header #block-mainnavigation-2 > ul > li').each(function () {
 			if ($(this).children('ul').length) {
 				$(this).addClass('has-submenu');
 				$(this).attr('aria-haspopup', 'true');
@@ -343,14 +354,14 @@ jQuery(document).ready(function($) {
 		$('#navbar > .container-fluid > ul > li.has-submenu.active-parent').prevAll('li').addClass('active-parent-sibling');
 		$('#navbar > .container-fluid > ul > li.has-submenu.active-parent').nextAll('li').addClass('active-parent-sibling');
 	
-		$('#navbar nav > ul > li.has-submenu > a').attr({'aria-haspopup': true,'aria-expanded': false});
+		$('#page-header #block-mainnavigation-2 > ul > li.has-submenu > a').attr({'aria-haspopup': true,'aria-expanded': false});
 		
 
 		
 	
 		//Improve mouse support
 		var timer;
-		$('#navbar nav > ul > li.has-submenu').each(function(){
+		$('#page-header #block-mainnavigation-2 > ul > li.has-submenu').each(function(){
 			$(this).on('mouseover', function(){
 				$(this).siblings().children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
 				$(this).children('.sub-menu').removeClass('collapsed').addClass('expanded');
@@ -366,7 +377,7 @@ jQuery(document).ready(function($) {
 		//Improve keyboard support - Toggle submenu using a hidden button
 		if ($(window).width() > 767) {
 			
-			$('#navbar nav > ul > li.has-submenu > a').each(function(){
+			$('#page-header #block-mainnavigation-2 > ul > li.has-submenu > a').each(function(){
 				$(this).append('<button><span><span class="sr-only">Toggle the sub-menu</span></span></button>');
 				$(this).append('<span class="sr-only">Press tab again to toggle the sub-menu</span>'); // Let screen readers know about the hidden button
 				$(this).parent().attr('aria-haspopup', 'true').addClass('expanded');
@@ -387,7 +398,7 @@ jQuery(document).ready(function($) {
 			
 			
 			// Close sub-menu when leaving the last item in the list (if it's the last sub-menu in the tree)
-			$('#navbar nav > ul > li.has-submenu .sub-menu li:last-child').on('focusout', function(){
+			$('#page-header #block-mainnavigation-2 > ul > li.has-submenu .sub-menu li:last-child').on('focusout', function(){
 				if ( $(this).find('.sub-menu').length === 0) {
 					$(this).parents('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
 					$(this).parents('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
@@ -395,13 +406,13 @@ jQuery(document).ready(function($) {
 			});
 					
 			// Collapse all other sub-menus when any top level parent is focused
-			$('#navbar nav > ul > li > a').on('focus', function(){
+			$('#page-header #block-mainnavigation-2 > ul > li > a').on('focus', function(){
 				$(this).parent().siblings('.has-submenu').find('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
 				$(this).parent().siblings('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
 			});
 			
 			// Collapse sub-menu when expanded button loses focus away from sub-menu
-			$('#navbar nav > ul > .has-submenu > a').on('focus', function(){
+			$('#page-header #block-mainnavigation-2 > ul > .has-submenu > a').on('focus', function(){
 				$(this).parents('li').children('.sub-menu.expanded').removeClass('expanded').addClass('collapsed');
 				$(this).parents('.has-submenu').find('.openButton').attr('aria-expanded', 'false').removeClass('openButton').addClass('closedButton');
 			});
@@ -446,10 +457,6 @@ jQuery(document).ready(function($) {
 		}
 		
 	
-		if (window.matchMedia('(max-width: 767px)').matches) {
-			$('body').removeClass('scrolled');
-		} 
-
 		$("#cu-search-form").attr("action", "/search/node/");
 		$("#cu-search-query").attr("name", "keys");
 
@@ -469,17 +476,6 @@ jQuery(document).ready(function($) {
 	
 	});
 	
-	// Window scroll ------------------------------------------------------------
-	$(window).on("scroll", function() {
-		if ( $(window).width() >= 768 ) {
-			var top_offset = $(window).scrollTop();
-			if (top_offset == 0) {
-				$('body').removeClass('scrolled');
-			} else {
-				$('body').addClass('scrolled');
-			}
-		}
-	});
 	
 	
 });
