@@ -299,6 +299,8 @@ jQuery(document).ready(function($) {
 	$(window).resize(resizeChecks);
 	//resizeChecks();
 	
+	// Add All Events link
+	$('#block-eventsblock').prepend('<a class="eventsblock more-link" href="/events">All Events</a>')
 	
 	
 	// Window Load ------------------------------------------------------------

@@ -66,7 +66,7 @@
 
 {% block header %}
 	<header id="cu-header" style="background: url('{{ background_image }}') left top no-repeat; background-size: cover; position: relative;">
-		<div id="hero-overlay" style="background: url('sites/default/files/2018-10/duotonebackground_1.png') top left no-repeat; background-size: cover; position: absolute; z-index: 0; width: 100%; height: 100%"></div>
+		<div id="hero-overlay"></div>
 		<div id="page-header">{{ page.header }}</div>
 		<div id="hero-foreground">
 			<div class="{{ container }}" style="background-image: url('{{ file_url(node.field_hero_foreground.entity.uri.value) }}');"></div>
@@ -91,7 +91,7 @@
 
 {% if page.timeline %}
   {% block timeline %}
-    <div id="timeline" class="col-sm-12 no-float no-padding" style="background: url({{ path('<front>') }}sites/default/files/styles/full_size_original_image_/public/inline-images/timeline-bg_2.png) top left no-repeat; background-size: cover;">
+    <div id="timeline" class="col-sm-12 no-float no-padding">
       <div class="timeline {{ container }}">
         {{ page.timeline }}
       </div>

@@ -662,6 +662,8 @@ footer .region-footer section span.contact-info a {
 }
 #timeline {
 	position: relative;
+	background: url(../images/timeline-bg_2.png) top left no-repeat; 
+	background-size: cover;
 }
 #timeline * {
 	color: #fff;
@@ -672,6 +674,10 @@ footer .region-footer section span.contact-info a {
 #timeline h2 {
 	color: #fff;
 	text-align: center;
+}
+.eventsblock.more-link {
+    float: right;
+    margin-top: 30px;
 }
 .region-partners > section:nth-child(2) {
     width: 33.333%;
@@ -1108,7 +1114,14 @@ footer .region-subfooter #social-icons .fa {
     background-repeat: no-repeat;
     height: 100%;
 }
-
+#hero-overlay {
+	background: url(../images/duotonebackground.png) top left no-repeat; 
+	background-size: cover; 
+	position: absolute; 
+	z-index: 0; 
+	width: 100%; 
+	height: 100%;
+}
 #page-header .region-header {
     height: 100%;
 	position: relative;
